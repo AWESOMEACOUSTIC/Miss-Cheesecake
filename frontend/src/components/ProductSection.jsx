@@ -44,8 +44,12 @@ export default function ProductsSection() {
   return (
     <section className="w-full bg-[#F6E0DE] py-16 px-7 md:px-8">
       {/* Section heading */}
-      <h2 className="text-center text-4xl md:text-5xl font-bold mb-12">
+      <h2 className="text-center text-4xl md:text-5xl font-bold mb-1">
         Our <span className="text-[#FF6B6B] font-[emiken]">Products</span>
+      </h2>
+
+         <h2 className="text-center text-[0.58em] md:text-[1.32vw] text-[#FBA736] font-[samarkan] mb-10">
+        Hamare cheesecakes
       </h2>
 
       {/* 2‑column grid on sm+, 1‑col on xs */}

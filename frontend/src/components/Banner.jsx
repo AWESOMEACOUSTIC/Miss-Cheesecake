@@ -17,13 +17,11 @@ export default function Banner() {
 
       <section className="bg-[#F6E0DE] py-12 px-4">
         <div className="relative w-full rounded-3xl overflow-hidden">
-          <div className=" flex justify-center items-end space-x-4 overflow-x-auto">
             <img
               src={Bannerdesign}
               alt="Cheesecake Jar"
               className="w-full h-full object-contain"
             />
-          </div>
           <div
             style={fadeStyle}
             className="

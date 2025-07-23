@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 import { FaPhoneAlt, FaEnvelope, FaInstagram } from 'react-icons/fa'
-import logo from '../assets/images/logo.png'
+import logo from '../assets/images/misscheesecake_logo.png'
 import mapImage from '../assets/images/map.png'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#F9E7CF] py-12 px-4">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-12">
+    <footer className="bg-[#F6E0DE] py-12 px-8">
+      <div className="max-w-full mx-auto flex flex-col md:flex-row justify-between gap-12 ">
         
         {/* Left: Logo + contact */}
         <div className="flex flex-col items-center md:items-start space-y-4">
@@ -15,24 +15,24 @@ export default function Footer() {
             alt="Miss Cheesecake Logo"
             className="w-24 h-24 rounded-full"
           />
-          <div className="space-y-2 text-[#C47F6E]">
+          <div className="space-y-2 flex flex-col text-[#C47F6E]">
             <div className="inline-flex items-center space-x-2">
               <FaPhoneAlt />
               <span>(+91) 9886791733</span>
             </div>
             <div className="inline-flex items-center space-x-2">
               <FaEnvelope />
-              <span>info@narunoodlebar.com</span>
+              <span>info@misscheesecake.com</span>
             </div>
             <div className="inline-flex items-center space-x-2">
               <FaInstagram />
-              <span>@Eatnaru</span>
+              <span>@misscheesecake</span>
             </div>
           </div>
         </div>
 
         {/* Middle: Hours & Links */}
-        <div className="flex flex-col sm:flex-row justify-center gap-12 text-[#C47F6E]">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-50 text-[#C47F6E]">
           {/* Hours */}
           <div>
             <h4 className="font-semibold mb-2">Hours</h4>
