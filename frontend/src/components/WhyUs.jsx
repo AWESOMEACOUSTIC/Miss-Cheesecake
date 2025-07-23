@@ -54,8 +54,8 @@ export default function WhyUs() {
             {features.slice(0, 2).map(f => (
               <div key={f.title} className="text-center">
                 <div className="text-4xl text-end">{f.emoji}</div>
-                <h3 className="mt-4 text-2xl font-semibold text-black text-end">{f.title}</h3>
-                <p className="mt-2 text-gray-500 max-w-xs text-end">{f.desc}</p>
+                <h3 className="mt-1 text-2xl font-[saans] text-black text-end">{f.title}</h3>
+                <p className="mt-2 text-[#8F8C8C] font-[satoshi] max-w-xs text-end">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -65,7 +65,7 @@ export default function WhyUs() {
             <img
               src={cheesecake}
               alt="Cheesecake"
-              className="w-90 h-auto object-contain"
+              className="w-full h-auto object-contain"
             />
           </div>
 
@@ -74,15 +74,15 @@ export default function WhyUs() {
             {features.slice(2).map(f => (
               <div key={f.title} className="text-start">
                 <div className="text-4xl">{f.emoji}</div>
-                <h3 className="mt-4 text-2xl font-semibold text-black text-start">{f.title}</h3>
-                <p className="mt-2 text-gray-500 max-w-xs text-start">{f.desc}</p>
+                <h3 className="mt-1 text-2xl font-[saans] text-black text-start">{f.title}</h3>
+                <p className="mt-2 text-[#8F8C8C] font-[satoshi] max-w-xs text-start">{f.desc}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Learn More button */}
-        <div className="mt-4 flex justify-center">
+        <div className="flex justify-center">
           <Button btn = "Learn More"/>
         </div>
       </div>

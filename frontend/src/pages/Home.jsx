@@ -3,6 +3,7 @@ import noodle from '../assets/images/noodle_illustration.png'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import WhyUs from '../components/WhyUs'
+import ProductsSection from '../components/ProductSection'
 
 export default function Home() {
     return (
@@ -32,6 +33,9 @@ export default function Home() {
 
                 {/* why us section */}
                 <WhyUs />
+
+                {/* Our Products section */}
+                <ProductsSection />
             </div>
         </div>
     )
