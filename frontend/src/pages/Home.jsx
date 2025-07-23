@@ -4,6 +4,10 @@ import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import WhyUs from '../components/WhyUs'
 import ProductsSection from '../components/ProductSection'
+import VideoBanner from '../components/VideoBanner'
+import CarasouelSection from '../components/CarasouelSection'
+import Banner from '../components/Banner'
+import Footer from '../components/Footer'
 
 export default function Home() {
     return (
@@ -36,6 +40,17 @@ export default function Home() {
 
                 {/* Our Products section */}
                 <ProductsSection />
+
+                {/* Video Banner section */}
+                <VideoBanner />
+
+                {/* Happy Customers */}
+                <CarasouelSection />
+
+                {/* Banner Design */}
+                <Banner />
+                {/* Footer section */}
+                <Footer />
             </div>
         </div>
     )

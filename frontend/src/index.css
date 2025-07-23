@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: 'samarkan';
-  src: url('./assets/fonts/Samarkan\ Normal.ttf') format('woff2');
+  src: url('./assets/fonts/Samarkan Normal.ttf') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap; /* avoid invisible text during load */
