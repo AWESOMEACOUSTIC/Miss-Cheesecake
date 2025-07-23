@@ -7,8 +7,6 @@ export default function Footer() {
   return (
     <footer className="bg-[#F6E0DE] py-12 px-8">
       <div className="max-w-full mx-auto flex flex-col md:flex-row justify-between gap-12 ">
-        
-        {/* Left: Logo + contact */}
         <div className="flex flex-col items-center md:items-start space-y-4">
           <img
             src={logo}
@@ -30,19 +28,15 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
-        {/* Middle: Hours & Links */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-50 text-[#C47F6E]">
-          {/* Hours */}
           <div>
             <h4 className="font-semibold mb-2">Hours</h4>
             <p>Tuesday</p>
-            <p>Dinner only (6:30, 8:30 pm)</p>
-            <p className="mt-4">Wednesday – Sunday</p>
-            <p>Lunch only (12:30, 2:30 pm)</p>
-            <p>Dinner only (6:30, 8:30 pm)</p>
+            <p>Dinner only (6:30, 8:30 pm)</p>
+            <p className="mt-4">Wednesday - Sunday</p>
+            <p>Lunch only (12:30, 2:30 pm)</p>
+            <p>Dinner only (6:30, 8:30 pm)</p>
           </div>
-          {/* Nav Links */}
           <div>
             <h4 className="font-semibold mb-2">Navigate</h4>
             <ul className="space-y-1">
@@ -69,8 +63,6 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
-        {/* Right: Map */}
         <div className="flex flex-col items-center">
           <img
             src={mapImage}

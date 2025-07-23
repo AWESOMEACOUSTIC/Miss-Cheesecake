@@ -1,4 +1,3 @@
-// src/components/VideoBanner.jsx
 import React, { useRef, useEffect } from 'react'
 import videoBanner from '../assets/videos/bannerVideo.mp4'
 
@@ -11,29 +10,25 @@ export default function VideoBanner() {
     const container = containerRef.current
     if (!vid || !container) return
 
-    // 1) As soon as enough data is loaded, kick off playback (muted so browser allows autoplay)
     const onCanPlay = () => {
       vid.muted = true
       vid.play().catch(() => {})
     }
     vid.addEventListener('canplay', onCanPlay)
 
-    // In case canplay already fired before listener
     if (vid.readyState >= 3) {
       onCanPlay()
     }
-
-    // 2) IntersectionObserver to toggle sound + ensure play when unmuted
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          vid.muted = false            // unmute
-          vid.play().catch(() => {})   // re‑play in case it was paused
+          vid.muted = false         
+          vid.play().catch(() => {}) 
         } else {
-          vid.muted = true             // mute again
+          vid.muted = true           
         }
       },
-      { threshold: 0.5 }               // 50% visible
+      { threshold: 0.5 }               
     )
     observer.observe(container)
 
@@ -67,7 +62,7 @@ export default function VideoBanner() {
 
         <div className="absolute inset-0 flex items-center justify-center z-10">
           <h2 className="text-[#FF4646] font-[emiken] text-5xl md:text-[4.89em] text-center leading-tight">
-            We Bake<br/>You Bite
+            We Bake<br/>You Bite
           </h2>
         </div>
       </div>

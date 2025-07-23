@@ -5,14 +5,12 @@ const navItems = ['Home', 'Cheesecakes', 'About us']
 export default function Navbar() {
   return (
     <nav className="h-[75px] bg-[#FCEDDE] rounded-full flex items-center gap-x-15 px-6 border-2 border-[#FDFDFD]">
-      {/* Logo */}
       <img
         src={logo}
         alt="Logo"
         className="w-[50px] h-[50px] rounded-full"
       />
 
-      {/* Links */}
       <ul className="flex space-x-8">
         {navItems.map((item) => (
           <li key={item}>

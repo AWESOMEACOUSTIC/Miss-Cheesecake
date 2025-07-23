@@ -9,7 +9,6 @@ export default function Hero() {
 
   return (
     <section className="w-full flex overflow-hidden">
-      {/* Left side: heading + button */}
       <div className="flex flex-col justify-center w-1/2 px-16">
         {headings.map((h, idx) => (
           <h1
@@ -28,7 +27,6 @@ export default function Hero() {
        <Button btn = "Explore Menu"/>
       </div>
 
-      {/* Right side: hero image */}
       <div className="flex-1 ml-30 flex justify-center items-center">
         <img
           src={heroImage}

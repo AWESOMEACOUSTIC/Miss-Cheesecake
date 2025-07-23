@@ -1,9 +1,7 @@
-import React from 'react'
-
 export default function ProductCard({ title, price, weight, imageSrc, bgColor }) {
   return (
     <div className="border-2 border-black">
-      {/* 1) Header: title + price/weight */}
+
       <div>
         <div className="p-2 text-center font-semibold border-b-2 bg-white/80 border-black">
           {title}
@@ -18,7 +16,6 @@ export default function ProductCard({ title, price, weight, imageSrc, bgColor })
         </div>
       </div>
 
-      {/* 2) Image area */}
       <div className={`${bgColor} p-4 flex justify-center items-center`}>
         <img
           src={imageSrc}
@@ -27,7 +24,6 @@ export default function ProductCard({ title, price, weight, imageSrc, bgColor })
         />
       </div>
 
-      {/* 3) Add button */}
       <div className="p-4 flex justify-center border-t-2 bg-white/80 border-black">
         <button className="inline-flex items-center gap-2 px-6 py-2 bg-white border border-black rounded-lg hover:bg-gray-50 transition">
           <span>Add</span>

@@ -42,14 +42,11 @@ export default function WhyUs() {
         "
       />
       <div className="relative z-10">
-        {/* Heading */}
         <h2 className="text-center text-4xl md:text-[3.4em] font-bold mb-12 leading-[0.97em] font-[saans]">
           Why Miss <span className="text-[#FF6B6B] font-[emiken]">CHEESECAKE</span> Is So<br />
           Special For Customers
         </h2>
-        {/* Features + Image Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-y-8 md:gap-y-0 md:gap-x-30 py-10">
-          {/* Left column */}
           <div className="flex flex-col items-center space-y-12">
             {features.slice(0, 2).map(f => (
               <div key={f.title} className="text-center">
@@ -60,7 +57,6 @@ export default function WhyUs() {
             ))}
           </div>
 
-          {/* Center image */}
           <div className="flex justify-center">
             <img
               src={cheesecake}
@@ -69,7 +65,6 @@ export default function WhyUs() {
             />
           </div>
 
-          {/* Right column */}
           <div className="flex flex-col items-center space-y-12">
             {features.slice(2).map(f => (
               <div key={f.title} className="text-start">
@@ -81,7 +76,6 @@ export default function WhyUs() {
           </div>
         </div>
 
-        {/* Learn More button */}
         <div className="flex justify-center">
           <Button btn = "Learn More"/>
         </div>
