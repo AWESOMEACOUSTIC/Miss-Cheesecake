@@ -1,4 +1,5 @@
 import heroImage from '../assets/images/hero_image.png' 
+import Button from './Button'
 
 export default function Hero() {
   const headings = [
@@ -24,17 +25,7 @@ export default function Hero() {
           </h1>
         ))}
 
-        <button
-          className="
-            mt-8 inline-flex items-center gap-2
-            px-6 py-3 rounded-full
-            bg-[#FFF1E6] text-[#FF6B6B] font-medium
-            hover:bg-[#FFDAD2] transition
-          "
-        >
-          Explore Menu
-          <span className="text-xl">→</span>
-        </button>
+       <Button btn = "Explore Menu"/>
       </div>
 
       {/* Right side: hero image */}
