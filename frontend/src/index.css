@@ -19,7 +19,7 @@
 @font-face {
   font-family: 'satoshi';
   src: url('./assets/fonts/Satoshi-Variable.ttf') format('woff2');
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
   font-display: swap; /* avoid invisible text during load */
 }

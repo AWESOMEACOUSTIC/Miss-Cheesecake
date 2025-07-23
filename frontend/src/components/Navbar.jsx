@@ -4,21 +4,21 @@ const navItems = ['Home', 'Cheesecakes', 'About us']
 
 export default function Navbar() {
   return (
-    <nav className="w-[692px] h-[75px] bg-[#FCEDDE] rounded-full mx-auto flex items-center px-6">
+    <nav className="h-[75px] bg-[#FCEDDE] rounded-full flex items-center gap-x-15 px-6 border-2 border-[#FDFDFD]">
       {/* Logo */}
       <img
         src={logo}
         alt="Logo"
-        className="w-[50px] h-[50px] rounded-full mr-8"
+        className="w-[50px] h-[50px] rounded-full"
       />
 
       {/* Links */}
-      <ul className="flex space-x-8 flex-1">
+      <ul className="flex space-x-8">
         {navItems.map((item) => (
           <li key={item}>
             <a
               href={`#${item.toLowerCase().replace(/\s+/g, '')}`}
-              className="text-[#C47F6E] text-lg font-medium hover:text-[#B0745A] transition-colors"
+              className="text-[#C47F6E] text-lg font-[satoshi] font-medium hover:text-[#B0745A] transition-colors"
             >
               {item}
             </a>
