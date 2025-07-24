@@ -14,10 +14,10 @@ const cards = [
 export default function BestsellerFlavors() {
     return (
         <div className="px-4 bg-[#F6E0DE]">
-            <h2 className="text-center font-[emiken] text-4xl text-[#FF6B6B]">
+            <h2 className="text-center font-[emiken] text-[3.42em] text-[#FF6B6B]">
                 Bestseller Flavors
             </h2>
-            <h3 className="text-lg mb-12 text-center md:text-[1.43em] text-[#E68400] font-[samarkan]">
+            <h3 className="text-lg mb-10 xl:mb-12 text-center md:text-[1.43em] text-[#E68400] font-[samarkan]">
                 Sabse Hit Flavors
             </h3>
             <HorizontalScroll cards={cards} />

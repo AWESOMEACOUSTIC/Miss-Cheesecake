@@ -23,8 +23,8 @@ export default function HorizontalScroll({ cards }) {
   const looped = [...cards, ...cards]
 
   return (
-    <section ref={ref} className="relative h-[300vh]">
-      <div className="sticky top-0 h-screen flex items-center overflow-hidden">
+    <section ref={ref} className="relative h-[40vh] md:h-[300vh]">
+      <div className="sticky top-0 h-screen flex items-start md:items-center overflow-hidden">
         <motion.div style={{ x }} className="flex gap-8 px-8">
           {looped.map((card, idx) => (
             <div
