@@ -36,8 +36,7 @@ export default function Loader() {
 
   return (
     <div
-      className="flex items-center justify-center h-screen bg-[#111] overflow-hidden"
-      style={{ fontFamily: '"Oswald","Bebas Neue",sans-serif' }}
+      className="flex items-center justify-center h-screen bg-[#111] overflow-hidden font-[emiken]"
     >
       <div
         ref={textRef}
