@@ -25,6 +25,14 @@
 }
 
 @font-face {
+  font-family: 'satoshi-bold';
+  src: url('./assets/fonts/Satoshi-Variable.ttf') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap; /* avoid invisible text during load */
+}
+
+@font-face {
   font-family: 'saans';
   src: url('./assets/fonts/SaansTRIAL-SemiBold.ttf') format('woff2');
   font-weight: 400;

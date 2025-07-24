@@ -41,7 +41,7 @@ export default function OverlayMask() {
             />
           </div>
           <motion.div
-            className="absolute inset-0 flex flex-col items-center justify-start pt-16 bg-[#F6E0DE] text-neutral-950"
+            className="absolute inset-0 flex flex-col items-center justify-start pt-26 bg-[#F6E0DE] text-neutral-950"
             style={{ clipPath }}
           >
             <motion.h1
