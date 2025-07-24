@@ -31,7 +31,20 @@ export default function Layout() {
           <Outlet />
         </main>
 
-        <footer>
+        <footer className="relative bg-[#F6E0DE]">
+          <img
+            src={noodle}
+            alt="Background noodle"
+            className="
+          absolute inset-0
+          w-full h-full
+          object-cover object-center
+          opacity-5
+          z-0
+          pointer-events-none
+          select-none
+        "
+          />
           <Footer />
         </footer>
       </div>

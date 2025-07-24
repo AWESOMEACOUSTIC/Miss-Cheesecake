@@ -1,25 +1,32 @@
-import logo from '../assets/images/misscheesecake_logo.png' 
+import { Link } from 'react-router-dom'
+import logo from '../assets/images/misscheesecake_logo.png'
 
-const navItems = ['Home', 'Cheesecakes', 'About us']
+const navItems = [
+  { label: 'Home', to: '/' },
+  { label: 'Cheesecakes', to: '/cheesecakes' },
+  { label: 'About us', to: '/about' },
+]
 
 export default function Navbar() {
   return (
-    <nav className="h-[75px] bg-[#FCEDDE] rounded-full flex items-center gap-x-15 px-6 border-2 border-[#FDFDFD]">
-      <img
-        src={logo}
-        alt="Logo"
-        className="w-[50px] h-[50px] rounded-full"
-      />
+    <nav className="h-[75px] bg-[#FCEDDE] rounded-full flex items-center gap-x-8 px-6 border-2 border-[#FDFDFD]">
+      <Link to="/">
+        <img
+          src={logo}
+          alt="Miss Cheesecake Logo"
+          className="w-[50px] h-[50px] rounded-full"
+        />
+      </Link>
 
-      <ul className="flex space-x-8">
-        {navItems.map((item) => (
-          <li key={item}>
-            <a
-              href={`#${item.toLowerCase().replace(/\s+/g, '')}`}
+      <ul className="flex space-x-8 flex-1">
+        {navItems.map(({ label, to }) => (
+          <li key={label}>
+            <Link
+              to={to}
               className="text-[#C47F6E] text-lg font-[satoshi] font-medium hover:text-[#B0745A] transition-colors"
             >
-              {item}
-            </a>
+              {label}
+            </Link>
           </li>
         ))}
       </ul>
