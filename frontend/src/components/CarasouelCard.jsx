@@ -34,15 +34,15 @@ const Card = ({
 
                 <div className="mt-6 flex flex-col items-center justify-start">
                     <div className='flex gap-x-2 w-full items-center'> 
-                        <span className="font-semibold text-[0.91em] text-start font-[satoshi]">{name}</span>
-                        <span className="flex items-center justify-center py-1 px-1 will-change-contents  xl:w-[6.92vw] text-center rounded-[1vw] xl:rounded-[0.31vw] text-black border text-[0.7em] xl:text-[0.68vw]">
+                        <span className="font-semibold text-[0.62em] md:text-[0.91em] text-start font-[satoshi]">{name}</span>
+                        <span className="flex items-center justify-center py-1 px-1 will-change-contents font-[satoshi] xl:w-[6.92vw] text-center rounded-[1vw] xl:rounded-[0.31vw] text-black border text-[0.5em] xl:text-[0.68vw]">
                             <InstagramIcon className="w-3 h-3 mr-1 fill-current" />
                             {handle}
                         </span>
                     </div>
                     <div className='flex justify-start w-full'>
                         {subtitle && (
-                            <p className="mt-1 2xl:text-[0.74em] font-[saans] text-start text-sm text-[#8F8C8C]">
+                            <p className="mt-1 text-[0.54em] md:text-[0.74em] font-[saans] text-start text-sm text-[#8F8C8C]">
                                 {subtitle}
                             </p>
                         )}

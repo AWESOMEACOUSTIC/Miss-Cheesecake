@@ -53,12 +53,12 @@ export default function App() {
         <Routes location={location} key={location.pathname}>
           <Route path="/login" element={<AuthPage mode="login" />} />
           <Route path="/signup" element={<AuthPage mode="signup" />} />
-          <Route path="/" element={<Layout />}>
+          {/* <Route path="/" element={<Layout />}> */}
             <Route index element={<Home />} />
             <Route path="cheesecakes" element={<Cheesecakes />} />
             <Route path="about" element={<About />} />
             <Route path="*" element={<NotFound />} />
-          </Route>
+          {/* </Route> */}
         </Routes>
       </motion.div>
     </>

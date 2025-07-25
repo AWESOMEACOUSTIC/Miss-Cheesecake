@@ -20,7 +20,7 @@ export default function ProductCard({ title, price, weight, imageSrc, bgColor })
         <img
           src={imageSrc}
           alt={title}
-          className="w-full h-80 object-contain"
+          className="w-full h-50 md:h-80 object-contain"
         />
       </div>
 

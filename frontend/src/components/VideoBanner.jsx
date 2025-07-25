@@ -15,20 +15,14 @@ export default function VideoBanner() {
       vid.play().catch(() => {})
     }
     vid.addEventListener('canplay', onCanPlay)
+    if (vid.readyState >= 3) onCanPlay()
 
-    if (vid.readyState >= 3) {
-      onCanPlay()
-    }
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          vid.muted = false         
-          vid.play().catch(() => {}) 
-        } else {
-          vid.muted = true           
-        }
+        vid.muted = !entry.isIntersecting
+        if (entry.isIntersecting) vid.play().catch(() => {})
       },
-      { threshold: 0.5 }               
+      { threshold: 0.5 }
     )
     observer.observe(container)
 
@@ -42,7 +36,7 @@ export default function VideoBanner() {
     <section className="bg-[#F9E7CF] py-10 px-4">
       <div
         ref={containerRef}
-        className="relative mx-auto w-full h-[100vh] bg-white rounded-3xl overflow-hidden"
+        className="relative mx-auto w-full  h-[60vh] md:h-[100vh] rounded-3xl overflow-hidden"
       >
         <video
           ref={videoRef}
@@ -50,18 +44,15 @@ export default function VideoBanner() {
           preload="auto"
           loop
           playsInline
-          className="
-            absolute inset-0
-            w-full h-full
-            object-cover
-            filter blur-sm 
-            pointer-events-none
-            select-none
-          "
+          className="absolute inset-0 w-full h-full object-cover filter blur-sm pointer-events-none select-none"
         />
 
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          <h2 className="text-[#FF4646] font-[emiken] text-5xl md:text-[4.89em] text-center leading-tight">
+        <div className="absolute inset-0 flex items-center justify-center z-10 px-4">
+          <h2 className="
+              text-[#FF4646] font-[emiken]
+              text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.89em]
+              text-center leading-tight
+            ">
             We Bake<br/>You Bite
           </h2>
         </div>

@@ -34,11 +34,11 @@ const sampleItems = [
 
 export default function CarasouelAnimation() {
   return (
-    <div className="py-10 w-full bg-[#F9E7CF]">
-      <h1 className="text-center text-3xl font-[saans] mb-3 leading-[1.3em]">
-        What Our Happy Customers <br /> Are Saying About Miss <span className='font-[emiken] text-[#FF6E6E]'>Cheesecake</span>
+    <div className="py-5 md:py-10 w-full bg-[#F9E7CF]">
+      <h1 className="text-center text-xl md:text-[3.7em] font-[saans] mb-2 md:mb-3 leading-[1.3em]">
+       <span className='font-bold'>What Our Happy Customers</span> <br /> <span className='font-bold'>Are Saying About</span> <span className="block md:inline" /> <span className='font-[emiken] text-[#FF6E6E]'>Miss Cheesecake</span>
       </h1>
-      <h2 className="text-center text-[0.58em] 2xl:text-[1.32vw] text-[#FBA736] uppercase font-[samarkan] 2xl:mb-7">logon ki baatein</h2>
+      <h2 className="text-center text-[0.88em] md:text-[1.32vw] text-[#f08800] uppercase font-[samarkan] mb-7">logon ki baatein</h2>
       <CarouselAnimation items={sampleItems} />
     </div>
   );
