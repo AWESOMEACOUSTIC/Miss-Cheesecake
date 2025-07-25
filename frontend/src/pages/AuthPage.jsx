@@ -2,6 +2,7 @@ import sharktank from "../assets/images/Sharktank.jpg"
 import logo from "../assets/images/misscheesecake_logo.png"
 import AuthForm from '../components/AuthForm';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export default function AuthPage({ mode }) {
     const isLogin = mode === 'login';
@@ -24,9 +25,15 @@ export default function AuthPage({ mode }) {
             >
                 <div className="w-full max-w-md">
                     <img src={logo} alt="Logo" className="w-26 h-26 mb-6" />
-                    <h2 className="text-2xl font-semibold mb-6">
-                        {isLogin ? 'Welcome back!' : 'Create an account'}
-                    </h2>
+                    {isLogin ? (
+                        <Link to="/signup" className="text-green-700">
+                            <span className='text-black'>Log In</span>
+                        </Link>
+                    ) : (
+                        <Link to="/login" className="text-green-700">
+                            <span className='text-black'>Sign Up</span>
+                        </Link>
+                    )}
                     <AuthForm mode={mode} />
                 </div>
             </motion.div>

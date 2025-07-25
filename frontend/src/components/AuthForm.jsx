@@ -1,11 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { useNavigate } from 'react-router-dom';
+
 export default function AuthForm({ mode }) {
   const isLogin = mode === 'login';
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Simulate auth logic here
+    if (isLogin) {
+      navigate('/');
+    } else {
+      navigate('/login');
+    }
+  };
 
   return (
-    <form className="space-y-4">
+    <form className="space-y-4" onSubmit={handleSubmit}>
       <div>
         <input
           type="email"
@@ -32,10 +45,10 @@ export default function AuthForm({ mode }) {
       <div className="flex items-center justify-between text-sm">
         {isLogin ? (
           <Link to="/signup" className="text-green-700 font-[satoshi]">
-            Don't have an account? <span className='hover:underline'>Signup</span> 
+            Don't have an account? <span className='hover:underline'>Signup</span>
           </Link>
         ) : (
-          <Link to="/login" className="text-green-700 ">
+          <Link to="/login" className="text-green-700 font-[satoshi]">
             Already have an account? <span className='hover:underline'>Log In</span>
           </Link>
         )}
@@ -44,7 +57,7 @@ export default function AuthForm({ mode }) {
         type="submit"
         className="w-full py-2 px-4 bg-green-700 text-white rounded hover:bg-green-800 transition"
       >
-        {isLogin ? 'Sign In' : 'Sign Up'}
+        {isLogin ? 'Log In' : 'Sign Up'}
       </button>
     </form>
   );
