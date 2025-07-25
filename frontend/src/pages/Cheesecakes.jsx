@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import VideoCarousel from '../components/VideoCarousel'
 import PosterGallery from '../components/PosterGallery'
 import CategorySection from '../components/CategorySection'

@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom'
-import logo from '../assets/images/misscheesecake_logo.png'
+import { Link } from 'react-router-dom';
+import logo from '../assets/images/misscheesecake_logo.png';
 
 const navItems = [
   { label: 'Home', to: '/' },
   { label: 'Cheesecakes', to: '/cheesecakes' },
   { label: 'About us', to: '/about' },
-]
+];
 
 export default function Navbar() {
   return (
@@ -31,11 +31,14 @@ export default function Navbar() {
         ))}
       </ul>
 
-      <button
-        className="px-6 py-2 border border-[#C47F6E] rounded-full text-[#C47F6E] font-medium uppercase hover:bg-[#FDE7D8] transition-colors"
-      >
-        LOGIN
-      </button>
+      <div className="flex gap-3">
+        <Link
+          to="/login"
+          className="px-6 py-2 border border-[#C47F6E] rounded-full text-[#C47F6E] font-medium uppercase hover:bg-[#FDE7D8] transition-colors"
+        >
+          LOGIN
+        </Link>
+      </div>
     </nav>
-  )
+  );
 }
