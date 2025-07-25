@@ -1,6 +1,6 @@
 import pooja from "../assets/images/pooja.png"
 import rathore from "../assets/images/rathore.png"
-import aditya from "../assets/images/adi.png"
+import aditya from "../assets/images/aditya.png"
 import OverlayMask from '../components/OverlayMask'
 import StorySection from '../components/StorySection'
 import BestsellerFlavor from '../components/BestsellerFlavor'
