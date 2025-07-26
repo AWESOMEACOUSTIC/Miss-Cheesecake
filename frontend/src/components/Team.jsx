@@ -71,18 +71,15 @@ export default function Team({ members = [], defaultName = '' }) {
   return (
     <section
       ref={containerRef}
-      className="md:mt-10 relative w-full py-1 mb-10 md:mb-0 md:py-4 text-[#e3e3db] flex flex-col justify-center items-center gap-10 overflow-hidden"
+      className="mt-10 relative w-full py-4 text-[#e3e3db] flex flex-col justify-center items-center gap-10 overflow-hidden"
     >
-      {/* Profile Names */}
       <div className="profile-names w-full h-[4em] overflow-hidden relative">
-        {/* Default name */}
         <div className="name default absolute top-0 w-full">
           <h1 className="absolute w-full text-center uppercase font-[emiken] text-[4rem] font-black text-[#f66161] select-none">
             {defaultName}
           </h1>
         </div>
-
-        {/* Member names */}
+        
         {members.map((m, idx) => (
           <div key={idx} className="name absolute top-0 w-full">
             <h1 className="absolute w-full text-center uppercase font-[emiken] text-[4rem] font-black text-[#f93535] select-none">

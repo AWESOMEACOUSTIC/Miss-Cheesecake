@@ -82,7 +82,7 @@ export default function Navbar() {
             <Link
               to="/login"
               onClick={() => setMenuOpen(false)}
-              className="inline-block mt-6 px-8 py-3 border border-[#C47F6E] rounded-full text-[#C47F6E] uppercase font-medium hover:bg-[#FDE7D8] transition-colors"
+              className="inline-block mt-6 px-8 py-3 border border-[#C47F6E] rounded-full uppercase font-medium  bg-[#FCEDDE] text-[#C8654E] hover:bg-[#C8654E] hover:text-[#FCEDDE] transition-colors"
             >
               LOGIN
             </Link>

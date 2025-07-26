@@ -40,11 +40,11 @@ export default function AuthPage({ mode }) {
                 <div className="w-full max-w-md z-10">
                     <img src={logo} alt="Logo" className="w-26 h-26 mb-6" />
                     {isLogin ? (
-                        <h5  className="text-green-700 mb-1 font-[saans]">
+                        <h5  className="text-green-700 mb-1 md:mb-2 font-[saans]">
                             <span className='text-black'>Log In</span>
                         </h5>
                     ) : (
-                        <h5 className="text-green-700">
+                        <h5 className="text-green-700 mb-1 md:mb-2">
                             <span className='text-black'>Sign Up</span>
                         </h5>
                     )}

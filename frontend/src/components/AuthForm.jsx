@@ -28,7 +28,7 @@ export default function AuthForm({ mode }) {
         <input
           type="password"
           placeholder="Password"
-          className="w-full px-4 py-2 border rounded font-[satoshi] focus:outline-none focus:ring"
+          className="w-full px-4 py-2 border rounded font-[] focus:outline-none focus:ring"
         />
       </div>
       {!isLogin && (
