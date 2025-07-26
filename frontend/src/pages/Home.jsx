@@ -1,4 +1,4 @@
-import noodle from '../assets/images/noodle_illustration.png'
+import noodle from '../assets/images/noodle_illustration.avif'
 import Hero from '../components/Hero'
 import WhyUs from '../components/WhyUs'
 import ProductsSection from '../components/ProductSection'
@@ -24,22 +24,11 @@ export default function Home() {
             />
             <div className="relative z-10 flex flex-col min-h-screen">
 
-                {/* Hero section */}
                 <Hero />
-
-                {/* why us section */}
                 <WhyUs />
-
-                {/* Our Products section */}
                 <ProductsSection />
-
-                {/* Video Banner section */}
                 <VideoBanner />
-
-                {/* Happy Customers */}
                 <CarasouelSection />
-
-                {/* Banner Design */}
                 <Banner />
             </div>
         </div>

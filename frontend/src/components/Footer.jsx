@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FaPhoneAlt, FaEnvelope, FaInstagram } from 'react-icons/fa'
-import logo from '../assets/images/misscheesecake_logo.png'
-import mapImage from '../assets/images/map.png'
+import logo from '../assets/images/misscheesecake_logo.avif'
+import mapImage from '../assets/images/map.avif'
 
 export default function Footer() {
   return (
@@ -35,7 +35,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-50 text-[#C47F6E]">
+        <div className="flex flex-col text-center sm:flex-row justify-center items-center gap-10 md:gap-50 text-[#C47F6E]">
           <div>
             <h4 className="font-semibold mb-2">Slice O'Clock</h4>
             <p>Monday: Closed (even cheesecake needs a day off)</p>

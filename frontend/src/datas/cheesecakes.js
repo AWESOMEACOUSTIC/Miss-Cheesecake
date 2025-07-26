@@ -1,7 +1,7 @@
 import biscoffImg from '../assets/images/biscoff_cheesecake.avif'
 import blueberryImg from '../assets/images/blueberry_cheesecake.avif'
-import strawberryImg from '../assets/images/strawberry_cheesecake.png'
-import mangoImg from '../assets/images/mango_cheesecake.png'
+import strawberryImg from '../assets/images/strawberry_cheesecake.avif'
+import mangoImg from '../assets/images/mango_cheesecake.avif'
 
 export default function getCheesecakes() {
     return [
@@ -41,7 +41,7 @@ export default function getCheesecakes() {
             bgColor: 'bg-[#FFF6CC]',
         },
         {
-            title: 'Chocolate Ganache Cheesecake',
+            title: 'Chocolate Cheesecake',
             price: '₹260',
             weight: '200g',
             imageSrc: mangoImg,

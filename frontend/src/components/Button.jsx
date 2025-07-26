@@ -1,4 +1,6 @@
 import React from 'react'
+import { FaArrowRight } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 function Button({ btn }) {
   return (
@@ -15,8 +17,12 @@ function Button({ btn }) {
         hover:bg-[#C8654E] transition
       "
     >
-      <span className="font-[satoshi]">{btn}</span>
-      <span className="text-[1em] text-lg sm:text-xl">→</span>
+     
+      <div className='flex gap-x-2 md:gap-x-3 items-center'>
+         <Link to={"/cheesecakes"} className="font-[satoshi]">{btn}</Link>
+         <FaArrowRight className='w-2 h-2 md:w-4 md:h-4'/>
+      </div>
+      
     </button>
   )
 }

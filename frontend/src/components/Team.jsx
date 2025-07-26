@@ -71,7 +71,7 @@ export default function Team({ members = [], defaultName = '' }) {
   return (
     <section
       ref={containerRef}
-      className="mt-10 relative w-full py-4 text-[#e3e3db] flex flex-col justify-center items-center gap-10 overflow-hidden"
+      className="md:mt-10 relative w-full py-1 mb-10 md:mb-0 md:py-4 text-[#e3e3db] flex flex-col justify-center items-center gap-10 overflow-hidden"
     >
       {/* Profile Names */}
       <div className="profile-names w-full h-[4em] overflow-hidden relative">

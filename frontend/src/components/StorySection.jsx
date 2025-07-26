@@ -1,4 +1,3 @@
-
 export default function StorySection() {
   return (
     <section className="bg-[#F6E0DE] py-16 mt-10 px-4">
@@ -15,8 +14,8 @@ export default function StorySection() {
           <h3 className="text-[1.43em] md:text-[2em] font-[satoshi-bold] text-[#FF6B6B]">
             The Story Behind
           </h3>
-          <h2 className="mt-2 text-4xl md:text-[3.44em] font-[emiken] text-[#FF6B6B]">
-            Miss Cheesecake
+          <h2 className="mt-2 text-3xl md:text-[3.44em] font-[emiken] text-[#FF6B6B]">
+            Miss Cheesecake
           </h2>
           <p className="text-lg md:text-[1.43em] text-[#E68400] font-[samarkan]">
             apni kahani

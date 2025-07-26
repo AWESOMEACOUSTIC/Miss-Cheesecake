@@ -1,3 +1,4 @@
+import { CiCirclePlus } from "react-icons/ci";
 export default function ProductCard({ title, price, weight, imageSrc, bgColor }) {
   return (
     <div className="border-2 border-black">
@@ -20,16 +21,14 @@ export default function ProductCard({ title, price, weight, imageSrc, bgColor })
         <img
           src={imageSrc}
           alt={title}
-          className="w-full h-50 md:h-80 object-contain"
+          className="w-full h-40 md:h-80 object-contain"
         />
       </div>
 
       <div className="p-4 flex justify-center border-t-2 bg-white/80 border-black">
-        <button className="inline-flex items-center gap-2 px-6 py-2 bg-white border border-black rounded-lg hover:bg-gray-50 transition">
+        <button className="inline-flex items-center gap-2 hover:text-[#fff] hover:bg-black font-[satoshi] px-6 py-2 bg-white border border-black rounded-lg transition">
           <span>Add</span>
-          <span className="w-5 h-5 rounded-full border border-black flex items-center justify-center text-lg leading-none">
-            +
-          </span>
+            <CiCirclePlus className="w-6 h-6 md:w-7 md:h-7"/>
         </button>
       </div>
     </div>

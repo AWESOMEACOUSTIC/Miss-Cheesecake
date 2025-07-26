@@ -1,6 +1,6 @@
 import Button from './Button'
 import cheesecake from '../assets/images/big_tiramisu.avif'
-import noodle from '../assets/images/noodle_illustration.png'
+import noodle from '../assets/images/noodle_illustration.avif'
 
 const features = [
   {

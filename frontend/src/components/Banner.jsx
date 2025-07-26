@@ -1,4 +1,4 @@
-import Bannerdesign from "../assets/images/BannerDesign.png"
+import Bannerdesign from "../assets/images/BannerDesign.avif"
 
 export default function Banner() {
     const fadeStyle = {

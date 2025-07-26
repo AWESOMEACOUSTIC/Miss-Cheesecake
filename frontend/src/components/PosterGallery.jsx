@@ -1,6 +1,6 @@
-import poster1 from '../assets/images/biscoff-poster.png'
-import poster2 from '../assets/images/strawberry-poster.png'
-import poster3 from '../assets/images/tiramisu-poster.png'
+import poster1 from '../assets/images/biscoff-poster.avif'
+import poster2 from '../assets/images/strawberry-poster.avif'
+import poster3 from '../assets/images/tiramisu-poster.avif'
 
 const posters = [
   { id: 1,   imageSrc: poster1},

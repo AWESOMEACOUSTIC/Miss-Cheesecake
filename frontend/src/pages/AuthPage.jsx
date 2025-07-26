@@ -1,6 +1,6 @@
-import sharktank from "../assets/images/Sharktank.jpg"
-import noodle from '../assets/images/noodle_illustration.png'
-import logo from "../assets/images/misscheesecake_logo.png"
+import sharktank from "../assets/images/Sharktank.avif"
+import noodle from '../assets/images/noodle_illustration.avif'
+import logo from "../assets/images/misscheesecake_logo.avif"
 import AuthForm from '../components/AuthForm';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
