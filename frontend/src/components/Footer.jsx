@@ -16,26 +16,36 @@ export default function Footer() {
           <div className="space-y-2 flex flex-col text-[#C47F6E]">
             <div className="inline-flex items-center space-x-2">
               <FaPhoneAlt />
-              <span>(+91) 9886791733</span>
+              <span>(+91) 9886791733</span>
             </div>
             <div className="inline-flex items-center space-x-2">
               <FaEnvelope />
-              <span>info@misscheesecake.com</span>
+              <span >misscheesecake@gmail.com</span>
             </div>
             <div className="inline-flex items-center space-x-2">
               <FaInstagram />
-              <span>@misscheesecake</span>
+              <a
+                href="https://www.instagram.com/__misscheesecake/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#C47F6E] hover:underline"
+              >
+                __misscheesecake
+              </a>
             </div>
           </div>
         </div>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-50 text-[#C47F6E]">
           <div>
-            <h4 className="font-semibold mb-2">Hours</h4>
-            <p>Tuesday</p>
-            <p>Dinner only (6:30, 8:30 pm)</p>
-            <p className="mt-4">Wednesday - Sunday</p>
-            <p>Lunch only (12:30, 2:30 pm)</p>
-            <p>Dinner only (6:30, 8:30 pm)</p>
+            <h4 className="font-semibold mb-2">Slice O'Clock</h4>
+            <p>Monday: Closed (even cheesecake needs a day off)</p>
+            <p className="">Tuesday - Friday</p>
+            <p>Afternoon Indulgence (2 pm - 5 pm)</p>
+            <p>Sunset Slices (6 pm - 9 pm)</p>
+
+            <p className="">Saturday &amp; Sunday</p>
+            <p>Brunch &amp; Bakes (10 am - 1 pm)</p>
+            <p>Twilight Tasting (4 pm - 7 pm)</p>
           </div>
           <div>
             <h4 className="font-semibold mb-2">Navigate</h4>
@@ -55,24 +65,26 @@ export default function Footer() {
                   About us
                 </Link>
               </li>
-              <li>
-                <Link to="/contact" className="hover:underline">
-                  Contact
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
-        <div className="flex flex-col items-center">
-          <img
-            src={mapImage}
-            alt="Our location on map"
-            className="w-40 h-40 rounded-full object-cover"
-          />
-          <p className="mt-2 text-center text-[#C47F6E]">
-            We are located inside The Courtyard!
-          </p>
-        </div>
+        <a
+          href="https://www.google.com/maps/search/miss+cheesecake+location/@26.2798325,73.0160379,15z?entry=s&sa=X&ved=1t%3A199789"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block"
+        >
+          <div className="flex flex-col items-center">
+            <img
+              src={mapImage}
+              alt="Our location on map"
+              className="w-40 h-40 rounded-full object-cover"
+            />
+            <p className="mt-2 text-center text-[#C47F6E]">
+              We are located at Jodhpur!
+            </p>
+          </div>
+        </a>
       </div>
     </footer>
   )

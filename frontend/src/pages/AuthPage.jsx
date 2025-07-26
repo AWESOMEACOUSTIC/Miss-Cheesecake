@@ -1,4 +1,5 @@
 import sharktank from "../assets/images/Sharktank.jpg"
+import noodle from '../assets/images/noodle_illustration.png'
 import logo from "../assets/images/misscheesecake_logo.png"
 import AuthForm from '../components/AuthForm';
 import { motion } from 'framer-motion';
@@ -18,21 +19,34 @@ export default function AuthPage({ mode }) {
 
             </div>
             <motion.div
-                className="md:w-1/2 w-full flex flex-col justify-center items-center px-6 md:px-10 py-10"
+                className="md:w-1/2 relative w-full bg-[#F6E0DE] flex flex-col justify-center items-center px-6 md:px-10 py-10"
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <div className="w-full max-w-md">
+                <img
+                    src={noodle}
+                    alt="Noodle Illustration"
+                    className="
+                          absolute inset-0
+                          w-full h-full
+                          object-cover object-center
+                          opacity-5
+                          z-0
+                          pointer-events-none
+                          select-none
+                        "
+                />
+                <div className="w-full max-w-md z-10">
                     <img src={logo} alt="Logo" className="w-26 h-26 mb-6" />
                     {isLogin ? (
-                        <Link to="/signup" className="text-green-700">
+                        <h5  className="text-green-700 mb-1 font-[saans]">
                             <span className='text-black'>Log In</span>
-                        </Link>
+                        </h5>
                     ) : (
-                        <Link to="/login" className="text-green-700">
+                        <h5 className="text-green-700">
                             <span className='text-black'>Sign Up</span>
-                        </Link>
+                        </h5>
                     )}
                     <AuthForm mode={mode} />
                 </div>

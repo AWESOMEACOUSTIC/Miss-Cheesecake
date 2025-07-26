@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { useNavigate } from 'react-router-dom';
@@ -9,7 +8,6 @@ export default function AuthForm({ mode }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate auth logic here
     if (isLogin) {
       navigate('/');
     } else {
@@ -23,14 +21,14 @@ export default function AuthForm({ mode }) {
         <input
           type="email"
           placeholder="Email"
-          className="w-full px-4 py-2 border rounded focus:outline-none focus:ring"
+          className="w-full px-4 py-2 border rounded font-[satoshi] focus:outline-none focus:ring"
         />
       </div>
       <div>
         <input
           type="password"
           placeholder="Password"
-          className="w-full px-4 py-2 border rounded focus:outline-none focus:ring"
+          className="w-full px-4 py-2 border rounded font-[satoshi] focus:outline-none focus:ring"
         />
       </div>
       {!isLogin && (
