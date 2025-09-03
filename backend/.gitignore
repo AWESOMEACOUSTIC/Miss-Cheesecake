@@ -68,6 +68,8 @@ package-lock.json
 yarn.lock
 pnpm-lock.yaml
 
+infrastructure
+
 # Ignore lock files above only if you intentionally don't want them versioned.
 # Remove the ones you actually want to keep under VCS.
 
