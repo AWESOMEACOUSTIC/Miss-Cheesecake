@@ -1,10 +1,8 @@
-// src/pages/AuthPage.jsx
 import React from 'react'
 import sharktank from "../assets/images/Sharktank.avif"
 import noodle from '../assets/images/noodle_illustration.avif'
 import logo from "../assets/images/misscheesecake_logo.avif"
 import AuthForm from '../components/AuthForm'
-import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { FiArrowLeft } from 'react-icons/fi'
 
@@ -23,11 +21,8 @@ export default function AuthPage({ mode }) {
       </div>
 
       {/* Right form half */}
-      <motion.div
+      <div
         className="md:w-1/2 relative w-full bg-[#F6E0DE] flex flex-col justify-center items-center px-6 md:px-10 py-10"
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
       >
         {/* Noodle background */}
         <img
@@ -62,7 +57,7 @@ export default function AuthPage({ mode }) {
 
           <AuthForm mode={mode} />
         </div>
-      </motion.div>
+      </div>
     </div>
   )
 }

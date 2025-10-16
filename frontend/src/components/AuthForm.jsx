@@ -42,7 +42,7 @@ export default function AuthForm({ mode }) {
       )}
       <div className="flex items-center justify-between text-sm">
         {isLogin ? (
-          <Link to="/signup" className="text-green-700 font-[satoshi]">
+          <Link to="/signup" className="text-green-900/80 font-[satoshi]">
             Don't have an account? <span className='hover:underline'>Signup</span>
           </Link>
         ) : (
