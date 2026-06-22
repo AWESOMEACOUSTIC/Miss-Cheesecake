@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 import { FaPhoneAlt, FaEnvelope, FaInstagram } from 'react-icons/fa'
-import logo from '../assets/images/misscheesecake_logo.avif'
-import mapImage from '../assets/images/map.avif'
+const logo = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/misscheesecake_logo.avif";
+const mapImage = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/map.avif";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#F6E0DE] py-12 px-8">
+    <footer className="py-12 px-8">
       <div className="max-w-full mx-auto flex flex-col md:flex-row justify-between gap-12 ">
         <div className="flex flex-col items-center md:items-start space-y-4">
           <img

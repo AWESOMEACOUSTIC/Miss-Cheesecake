@@ -14,7 +14,7 @@ export default function CheesecakeSection() {
   ]
 
   return (
-    <div className="bg-[#F6E0DE] text-neutral-900">
+    <div className="text-neutral-900">
       <VideoCarousel />
       <PosterGallery />
 

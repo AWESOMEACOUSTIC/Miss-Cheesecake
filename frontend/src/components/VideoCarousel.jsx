@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import Lenis from 'lenis'
 import { motion } from 'framer-motion'
 
-import video1 from '../assets/videos/savour.mp4'
-import video2 from '../assets/videos/blue_video.mp4'
-import video3 from '../assets/videos/bannerVideo.mp4'
+const video1 = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/savour.mp4";
+const video2 = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/blue_video.mp4";
+const video3 = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/bannerVideo.mp4";
 
 const videos = [
   { id: 1, src: video1 },

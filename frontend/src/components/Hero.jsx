@@ -1,4 +1,4 @@
-import heroImage from '../assets/images/hero_image.avif' 
+const heroImage = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/hero_image.avif"; 
 import Button from './Button'
 
 export default function Hero() {

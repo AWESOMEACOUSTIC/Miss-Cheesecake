@@ -1,6 +1,6 @@
 export default function StorySection() {
   return (
-    <section className="bg-[#F6E0DE] py-16 mt-10 px-4">
+    <section className="py-16 mt-10 px-4">
       <div className="max-w-[90vw] mx-auto flex flex-col items-center md:flex-row md:items-center md:justify-between">
         <div className="flex justify-center md:justify-start">
           <img

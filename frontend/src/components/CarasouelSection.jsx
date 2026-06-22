@@ -1,5 +1,7 @@
 import CarouselAnimation from './CarasouelAnimation';
 
+const noodle = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/noodle_illustration.avif?updatedAt=1782154931879&tr=w-1000";
+
 const sampleItems = [
   {
     content: `“I treated myself to Miss Cheesecake’s Classic New York slice and it was the creamiest, dreamiest dessert I’ve ever tasted. Every bite melted in my mouth. I’m officially obsessed!”`,
@@ -34,12 +36,27 @@ const sampleItems = [
 
 export default function CarasouelAnimation() {
   return (
-    <div className="py-5 md:py-10 w-full bg-[#F9E7CF]">
-      <h1 className="text-center text-xl md:text-[3.7em] font-[saans] mb-2 md:mb-3 leading-[1.3em]">
-       <span className='font-bold'>What Our Happy Customers</span> <br /> <span className='font-bold'>Are Saying About</span> <span className="block md:inline" /> <span className='font-[emiken] text-[#FF6E6E]'>Miss Cheesecake</span>
-      </h1>
-      <h2 className="text-center text-[0.88em] md:text-[1.32vw] text-[#f08800] uppercase font-[samarkan] mb-7">logon ki baatein</h2>
-      <CarouselAnimation items={sampleItems} />
+    <div className="relative py-5 md:py-10 w-full bg-[#F9E7CF]">
+      <img
+        src={noodle}
+        alt="Noodle Illustration"
+        className="
+          absolute inset-0
+          w-full h-full
+          object-cover object-center
+          opacity-5
+          z-0
+          pointer-events-none
+          select-none
+        "
+      />
+      <div className="relative z-10">
+        <h1 className="text-center text-xl md:text-[3.7em] font-[saans] mb-2 md:mb-3 leading-[1.3em]">
+         <span className='font-bold'>What Our Happy Customers</span> <br /> <span className='font-bold'>Are Saying About</span> <span className="block md:inline" /> <span className='font-[emiken] text-[#FF6E6E]'>Miss Cheesecake</span>
+        </h1>
+        <h2 className="text-center text-[0.88em] md:text-[1.32vw] text-[#f08800] uppercase font-[samarkan] mb-7">logon ki baatein</h2>
+        <CarouselAnimation items={sampleItems} />
+      </div>
     </div>
   );
 }

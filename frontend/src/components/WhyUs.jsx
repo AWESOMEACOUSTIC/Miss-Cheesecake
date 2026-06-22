@@ -1,6 +1,6 @@
 import Button from './Button'
-import cheesecake from '../assets/images/big_tiramisu.avif'
-import noodle from '../assets/images/noodle_illustration.avif'
+const cheesecake = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/big_tiramisu.avif";
+const noodle = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/noodle_illustration.avif?updatedAt=1782154931879&tr=w-1000";
 
 const features = [
   {
@@ -44,7 +44,7 @@ export default function WhyUs() {
       <div className="relative z-10">
         <h2 className="text-center text-xl md:text-[3.7em] mb-4 md:mb-12 leading-[0.97em] font-[saans]">
           <span className='font-bold'>Why </span> <span className="text-[#FF6B6B] font-[emiken]">MISS CHEESECAKE</span> <span className='font-bold'>Is </span> <br />
-         <span className='font-bold'>So Special For Customers</span> 
+          <span className='font-bold'>So Special For Customers</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-y-8 md:gap-y-0 md:gap-x-30 py-10">
           <div className="flex flex-col items-center space-y-8 md:space-y-12">
@@ -77,7 +77,7 @@ export default function WhyUs() {
         </div>
 
         <div className="flex justify-center">
-          <Button btn = "Learn More"/>
+          <Button btn="Learn More" />
         </div>
       </div>
     </section>

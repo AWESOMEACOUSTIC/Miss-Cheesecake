@@ -1,4 +1,4 @@
-import Bannerdesign from "../assets/images/BannerDesign.avif"
+const Bannerdesign = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/BannerDesign.avif";
 
 export default function Banner() {
     const fadeStyle = {
@@ -15,7 +15,7 @@ export default function Banner() {
         }
       `}</style>
 
-      <section className="bg-[#F6E0DE] py-12 px-4">
+      <section className="py-12 px-4">
         <div className="relative w-full rounded-3xl overflow-hidden">
             <img
               src={Bannerdesign}

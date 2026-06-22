@@ -1,7 +1,7 @@
 import React from 'react'
-import sharktank from "../assets/images/Sharktank.avif"
-import noodle from '../assets/images/noodle_illustration.avif'
-import logo from "../assets/images/misscheesecake_logo.avif"
+const sharktank = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/Sharktank.avif";
+const noodle = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/noodle_illustration.avif?updatedAt=1782154931879&tr=w-1000";
+const logo = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/misscheesecake_logo.avif";
 import AuthForm from '../components/AuthForm'
 import { Link } from 'react-router-dom'
 import { FiArrowLeft } from 'react-icons/fi'

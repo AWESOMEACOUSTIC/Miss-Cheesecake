@@ -1,7 +1,7 @@
-import biscoffImg from '../assets/images/biscoff_cheesecake.avif'
-import blueberryImg from '../assets/images/blueberry_cheesecake.avif'
-import strawberryImg from '../assets/images/strawberry_cheesecake.avif'
-import mangoImg from '../assets/images/mango_cheesecake.avif'
+const biscoffImg = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/biscoff_cheesecake.avif";
+const blueberryImg = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/blueberry_cheesecake.avif";
+const strawberryImg = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/strawberry_cheesecake.avif";
+const mangoImg = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/mango_cheesecake.avif";
 
 export default function getCheesecakes() {
     return [

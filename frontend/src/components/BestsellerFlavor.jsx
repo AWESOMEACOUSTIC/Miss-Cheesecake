@@ -1,7 +1,7 @@
-import tiramisu from "../assets/images/tiramisu-poster.avif"
-import biscoff from "../assets/images/biscoff-poster.avif"
-import strawberry from "../assets/images/strawberry-poster.avif"
-import blueberry from "../assets/images/blueberry-poster.avif"
+const tiramisu = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/tiramisu-poster.avif";
+const biscoff = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/biscoff-poster.avif";
+const strawberry = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/strawberry-poster.avif";
+const blueberry = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/blueberry-poster.avif";
 import HorizontalScroll from './HorizontalScroll'
 
 const cards = [
@@ -13,7 +13,7 @@ const cards = [
 
 export default function BestsellerFlavors() {
     return (
-        <div className="px-4 bg-[#F6E0DE]">
+        <div className="px-4">
             <h2 className="text-center font-[emiken] text-3xl md:text-[3.42em] text-[#FF6B6B]">
                 Bestseller Flavors
             </h2>

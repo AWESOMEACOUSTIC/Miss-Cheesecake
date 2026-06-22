@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react'
-import videoBanner from '../assets/videos/bannerVideo.mp4'
+const videoBanner = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/bannerVideo.mp4";
+const noodle = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/noodle_illustration.avif?updatedAt=1782154931879&tr=w-1000";
 
 export default function VideoBanner() {
   const containerRef = useRef(null)
@@ -33,28 +34,43 @@ export default function VideoBanner() {
   }, [])
 
   return (
-    <section className="bg-[#F9E7CF] py-10 px-4">
-      <div
-        ref={containerRef}
-        className="relative mx-auto w-full  h-[60vh] md:h-[100vh] rounded-3xl overflow-hidden"
-      >
-        <video
-          ref={videoRef}
-          src={videoBanner}
-          preload="auto"
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover filter blur-sm pointer-events-none select-none"
-        />
+    <section className="relative bg-[#F9E7CF] py-10 px-4">
+      <img
+        src={noodle}
+        alt="Noodle Illustration"
+        className="
+          absolute inset-0
+          w-full h-full
+          object-cover object-center
+          opacity-5
+          z-0
+          pointer-events-none
+          select-none
+        "
+      />
+      <div className="relative z-10">
+        <div
+          ref={containerRef}
+          className="relative mx-auto w-full  h-[60vh] md:h-[100vh] rounded-3xl overflow-hidden"
+        >
+          <video
+            ref={videoRef}
+            src={videoBanner}
+            preload="auto"
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover filter blur-sm pointer-events-none select-none"
+          />
 
-        <div className="absolute inset-0 flex items-center justify-center z-10 px-4">
-          <h2 className="
-              text-[#FF4646] font-[emiken]
-              text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.89em]
-              text-center leading-tight
-            ">
-            We Bake<br/>You Bite
-          </h2>
+          <div className="absolute inset-0 flex items-center justify-center z-10 px-4">
+            <h2 className="
+                text-[#FF4646] font-[emiken]
+                text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.89em]
+                text-center leading-tight
+              ">
+              We Bake<br/>You Bite
+            </h2>
+          </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
-import poster1 from '../assets/images/biscoff-poster.avif'
-import poster2 from '../assets/images/strawberry-poster.avif'
-import poster3 from '../assets/images/tiramisu-poster.avif'
+const poster1 = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/biscoff-poster.avif";
+const poster2 = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/strawberry-poster.avif";
+const poster3 = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/tiramisu-poster.avif";
 
 const posters = [
   { id: 1,   imageSrc: poster1},

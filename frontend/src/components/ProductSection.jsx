@@ -8,7 +8,7 @@ export default function ProductsSection() {
   const products = allProducts.slice(0, 4) 
 
   return (
-    <section className="w-full bg-[#F6E0DE] py-8 md:py-16 px-7 md:px-8">
+    <section className="w-full py-8 md:py-16 px-7 md:px-8">
       <h2 className="text-center text-4xl md:text-[3.7em] mb-1">
        <span className='font-bold'>Our </span>  <span className="text-[#FF6B6B] font-[emiken]">Products</span>
       </h2>
