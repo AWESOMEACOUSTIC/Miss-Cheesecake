@@ -6,6 +6,8 @@ import StorySection from '../components/StorySection'
 import BestsellerFlavor from '../components/BestsellerFlavor'
 import Team from '../components/Team'
 
+import MemoryWall from '../components/MemoryWall'
+
 export default function About() {
   const teamMembers = [
   {
@@ -29,6 +31,7 @@ export default function About() {
     <BestsellerFlavor />
     <Team  defaultName="Team"
       members={teamMembers}/>
+    <MemoryWall />
   </div>
   )
 }

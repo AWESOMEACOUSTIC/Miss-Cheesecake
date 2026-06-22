@@ -9,7 +9,7 @@ export default function Hero() {
 
   return (
     <section className="w-full h-40 md:h-auto flex overflow-hidden">
-      <div className="flex flex-col justify-center w-[20vw] md:w-1/2 px-4 md:px-16">
+      <div className="flex flex-col justify-center items-start w-[20vw] md:w-1/2 px-4 md:px-16">
         {headings.map((h, idx) => (
           <h1
             key={idx}
