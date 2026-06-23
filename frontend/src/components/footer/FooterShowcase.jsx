@@ -1,6 +1,6 @@
 import React from 'react'
 
-const showcase = 'https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/hero_image.avif'
+const showcase = 'https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/pooja.avif?updatedAt=1782154922772'
 
 export default function FooterShowcase() {
   return (

@@ -1,7 +1,13 @@
 const biscoffImg = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/biscoff_cheesecake.avif";
-const blueberryImg = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/blueberry_cheesecake.avif";
-const strawberryImg = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/strawberry_cheesecake.avif";
+const blueberryImg = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/Blueberry_Cheesecake-removebg-preview-Picsart-AiImageEnhancer.png";
+const strawberryImg = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/Strawberry%20Cheesecale.png";
 const mangoImg = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/mango_cheesecake.avif";
+const tiramisu = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/Tiramisu.png";
+const blackCurrant = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/BlackCurrant.png";
+const raspberry = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/Raspberry.png";
+const oreoNutella = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/oreo%20nutella.png";
+const classicVanilla = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/Classic%20Vanilla.png";
+const chocolate = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/Chocolate.png";
 
 export default function getCheesecakes() {
     return [
@@ -47,7 +53,7 @@ export default function getCheesecakes() {
             price: '₹260',
             numericPrice: 260,
             weight: '200g',
-            imageSrc: mangoImg,
+            imageSrc: oreoNutella,
             bgColor: 'bg-[#FFF6CC]',
         },
         {
@@ -56,7 +62,7 @@ export default function getCheesecakes() {
             price: '₹260',
             numericPrice: 260,
             weight: '200g',
-            imageSrc: mangoImg,
+            imageSrc: chocolate,
             bgColor: 'bg-[#FFF6CC]',
         },
         {
@@ -65,7 +71,34 @@ export default function getCheesecakes() {
             price: '₹260',
             numericPrice: 260,
             weight: '200g',
-            imageSrc: mangoImg,
+            imageSrc: classicVanilla,
+            bgColor: 'bg-[#FFF6CC]',
+        },
+        {
+            id: 'tiramisu',
+            title: 'Tiramisu Cheesecake',
+            price: '₹260',
+            numericPrice: 260,
+            weight: '200g',
+            imageSrc: tiramisu,
+            bgColor: 'bg-[#FFF6CC]',
+        },
+        {
+            id: 'raspberry',
+            title: 'Raspberry Cheesecake',
+            price: '₹260',
+            numericPrice: 260,
+            weight: '200g',
+            imageSrc: raspberry,
+            bgColor: 'bg-[#FFF6CC]',
+        },
+        {
+            id: 'BlackCurrant',
+            title: 'Black Currant Cheesecake',
+            price: '₹260',
+            numericPrice: 260,
+            weight: '200g',
+            imageSrc: blackCurrant,
             bgColor: 'bg-[#FFF6CC]',
         },
     ]
