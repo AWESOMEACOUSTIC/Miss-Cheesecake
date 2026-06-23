@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
-import Footer from './Footer';
+import Footer from './footer/Footer';
 const noodle = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/noodle_illustration.avif?updatedAt=1782154931879&tr=w-1000";
 
 export default function Layout() {
@@ -25,14 +25,7 @@ export default function Layout() {
           <Outlet />
         </main>
 
-        <footer className="relative bg-[#F6E0DE]">
-          <img
-            src={noodle}
-            alt="Background noodle"
-            className="absolute inset-0 w-full h-full object-cover object-center opacity-5 z-0 pointer-events-none select-none"
-          />
-          <Footer />
-        </footer>
+        <Footer />
       </div>
     </div>
   );
