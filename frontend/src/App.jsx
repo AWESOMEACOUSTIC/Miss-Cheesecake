@@ -9,6 +9,8 @@ import Cheesecakes from './pages/Cheesecakes';
 import NotFound from './pages/NotFound';
 import Loader from './pages/Loader';
 import AuthPage from './pages/AuthPage';
+// import CheckoutPage from './pages/CheckoutPage';
+import CartDrawer from './components/cart/CartDrawer';
 
 export default function App() {
   const [loading, setLoading] = useState(() => {
@@ -50,6 +52,7 @@ export default function App() {
           <Routes location={location} key={location.pathname}>
             <Route path="/login" element={<AuthPage mode="login" />} />
             <Route path="/signup" element={<AuthPage mode="signup" />} />
+            {/* <Route path="/checkout" element={<CheckoutPage />} /> */}
             <Route path="/" element={<Layout />}
             >
               <Route index element={<Home />} />
@@ -58,6 +61,9 @@ export default function App() {
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
+
+          {/* Cart Drawer — renders globally */}
+          <CartDrawer />
         </motion.div>
       )}
     </AnimatePresence>

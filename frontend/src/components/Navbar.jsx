@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ShoppingBag } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+// import { useCart } from '../context/CartContext';
+
 const logo = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/misscheesecake_logo.avif";
 
 const navItems = [
@@ -10,6 +14,7 @@ const navItems = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  // const { openCart, itemCount } = useCart();
 
   return (
     <nav className="flex md:w-[40%] md:h-[75px] items-center justify-between bg-[#FCEDDE] rounded-full px-4 py-2 lg:px-6 lg:py-0 border-2 border-[#FDFDFD] relative">
@@ -37,7 +42,30 @@ export default function Navbar() {
         ))}
       </ul>
 
-      <div className="hidden lg:flex">
+      <div className="hidden lg:flex items-center gap-4">
+        {/* Cart Icon */}
+        <motion.button
+          onClick={openCart}
+          className="relative flex items-center justify-center w-10 h-10 rounded-full text-[#C47F6E] hover:bg-[#FDE7D8] transition-colors"
+          whileTap={{ scale: 0.9 }}
+          aria-label="Open cart"
+        >
+          <ShoppingBag size={20} strokeWidth={2} />
+          <AnimatePresence>
+            {itemCount > 0 && (
+              <motion.span
+                key={itemCount}
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0 }}
+                className="absolute -top-0.5 -right-0.5 w-[18px] h-[18px] rounded-full bg-[#C8654E] text-white text-[0.6rem] font-[satoshi-bold] flex items-center justify-center"
+              >
+                {itemCount}
+              </motion.span>
+            )}
+          </AnimatePresence>
+        </motion.button>
+
         <Link
           to="/login"
           className="px-6 py-2 border border-[#C47F6E] rounded-full text-[#C47F6E] font-medium uppercase hover:bg-[#FDE7D8] transition-colors"
@@ -46,15 +74,40 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <button
-        className="lg:hidden ml-auto"
-        onClick={() => setMenuOpen(true)}
-        aria-label="Open menu"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#C47F6E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+      {/* Mobile: cart + hamburger */}
+      <div className="flex items-center gap-2 lg:hidden">
+        <motion.button
+          onClick={openCart}
+          className="relative flex items-center justify-center w-9 h-9 rounded-full text-[#C47F6E]"
+          whileTap={{ scale: 0.9 }}
+          aria-label="Open cart"
+        >
+          <ShoppingBag size={18} strokeWidth={2} />
+          <AnimatePresence>
+            {itemCount > 0 && (
+              <motion.span
+                key={itemCount}
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0 }}
+                className="absolute -top-0.5 -right-0.5 w-[16px] h-[16px] rounded-full bg-[#C8654E] text-white text-[0.55rem] font-[satoshi-bold] flex items-center justify-center"
+              >
+                {itemCount}
+              </motion.span>
+            )}
+          </AnimatePresence>
+        </motion.button>
+
+        <button
+          className="ml-auto"
+          onClick={() => setMenuOpen(true)}
+          aria-label="Open menu"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#C47F6E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
 
       {menuOpen && (
         <div className="fixed inset-0 bg-[#FCEDDE] z-50 flex flex-col items-center justify-center">
@@ -90,4 +143,5 @@ export default function Navbar() {
         </div>
       )}
     </nav>
-)}
+  )
+}

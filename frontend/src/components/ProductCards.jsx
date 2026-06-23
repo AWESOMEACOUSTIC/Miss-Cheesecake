@@ -1,13 +1,30 @@
 import { Plus } from 'lucide-react'
 import { motion } from 'motion/react'
+// import { useCart } from '../context/CartContext'
 
 export default function ProductCard({
+  id,
   title,
   price,
+  numericPrice,
   weight,
   imageSrc,
   bgColor,
 }) {
+  // const { addItem } = useCart();
+
+  // const handleAdd = () => {
+  //   addItem({
+  //     id,
+  //     title,
+  //     price,
+  //     numericPrice,
+  //     weight,
+  //     imageSrc,
+  //     bgColor,
+  //   });
+  // };
+
   return (
     <div className="border-2 border-black">
       <div>
@@ -50,6 +67,7 @@ export default function ProductCard({
             px-7 py-3 rounded-2xl
             border-2 border-black
           "
+        // onClick={handleAdd}
         >
           <span>Add</span>
           <span
