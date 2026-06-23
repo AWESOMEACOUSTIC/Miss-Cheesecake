@@ -13,27 +13,9 @@ import OrderSuccess from '../components/checkout/OrderSuccess';
 import '../components/checkout/Checkout.css';
 
 const INITIAL_FORM = {
-  // Contact
-  email: '',
-  newsletter: true,
-  // Delivery
-  country: 'India',
-  firstName: '',
-  lastName: '',
-  address: '',
-  apartment: '',
-  city: '',
-  state: '',
-  zip: '',
-  phone: '',
-  // Payment
-  cardNumber: '',
-  cardExpiry: '',
-  cardCvc: '',
-  cardName: '',
-  billingAddress: '',
-  billingCity: '',
-  billingZip: '',
+  email: '', newsletter: true,
+  country: 'India', firstName: '', lastName: '', address: '', apartment: '', city: '', state: '', zip: '', phone: '',
+  cardNumber: '', cardExpiry: '', cardCvc: '', cardName: '', billingAddress: '', billingCity: '', billingZip: '',
 };
 
 export default function CheckoutPage() {
@@ -48,23 +30,14 @@ export default function CheckoutPage() {
   const [orderSuccess, setOrderSuccess] = useState(false);
   const [orderNumber, setOrderNumber] = useState('');
 
-  // Redirect if cart is empty and not on success
   if (itemCount === 0 && !orderSuccess) {
     return (
-      <div className="checkout-page">
+      <div className="min-h-screen bg-[#FBF4EE] font-[satoshi]">
         <CheckoutHeader />
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          minHeight: '60vh',
-          fontFamily: 'satoshi, sans-serif',
-          color: '#C47F6E',
-        }}>
-          <p style={{ fontSize: '1.1rem', marginBottom: 20 }}>Your cart is empty</p>
+        <div className="flex flex-col items-center justify-center min-h-[60vh] text-[#C47F6E]">
+          <p className="text-[1.1rem] mb-5">Your cart is empty</p>
           <button
-            className="empty-cart-cta"
+            className="inline-flex items-center gap-2 py-3.5 px-9 rounded-full border-[1.5px] border-[#C8654E] bg-transparent text-[#C8654E] font-[satoshi-bold] text-[0.95rem] uppercase cursor-pointer transition-all duration-400 hover:bg-[#C8654E] hover:text-[#FCEDDE]"
             onClick={() => navigate('/')}
           >
             Go Shopping
@@ -76,14 +49,8 @@ export default function CheckoutPage() {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setForm((prev) => ({
-      ...prev,
-      [name]: type === 'checkbox' ? checked : value,
-    }));
-    // Clear error on change
-    if (errors[name]) {
-      setErrors((prev) => ({ ...prev, [name]: '' }));
-    }
+    setForm((prev) => ({ ...prev, [name]: type === 'checkbox' ? checked : value }));
+    if (errors[name]) setErrors((prev) => ({ ...prev, [name]: '' }));
   };
 
   const addressFilled = !!(form.address && form.city && form.state && form.zip);
@@ -106,16 +73,9 @@ export default function CheckoutPage() {
 
   const handleSubmit = async () => {
     const validationErrors = validate();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
-
+    if (Object.keys(validationErrors).length > 0) { setErrors(validationErrors); return; }
     setSubmitting(true);
-
-    // Simulate payment processing
     await new Promise((r) => setTimeout(r, 2000));
-
     const orderId = 'MC-' + Math.random().toString(36).substring(2, 8).toUpperCase();
     setOrderNumber(orderId);
     clearCart();
@@ -125,27 +85,27 @@ export default function CheckoutPage() {
 
   if (orderSuccess) {
     return (
-      <div className="checkout-page">
+      <div className="min-h-screen bg-[#FBF4EE] font-[satoshi]">
         <CheckoutHeader />
         <OrderSuccess orderNumber={orderNumber} />
-        <div className="checkout-footer">
-          <a href="#">Refund policy</a>
-          <a href="#">Shipping</a>
-          <a href="#">Privacy policy</a>
-          <a href="#">Terms of service</a>
+        <div className="py-6 px-12 max-sm:py-5 max-sm:px-4 flex justify-center gap-6 flex-wrap">
+          <a href="#" className="font-[satoshi] text-[0.78rem] text-[#C47F6E] underline underline-offset-[3px] transition-colors duration-250 hover:text-[#C8654E]">Refund policy</a>
+          <a href="#" className="font-[satoshi] text-[0.78rem] text-[#C47F6E] underline underline-offset-[3px] transition-colors duration-250 hover:text-[#C8654E]">Shipping</a>
+          <a href="#" className="font-[satoshi] text-[0.78rem] text-[#C47F6E] underline underline-offset-[3px] transition-colors duration-250 hover:text-[#C8654E]">Privacy policy</a>
+          <a href="#" className="font-[satoshi] text-[0.78rem] text-[#C47F6E] underline underline-offset-[3px] transition-colors duration-250 hover:text-[#C8654E]">Terms of service</a>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="checkout-page">
+    <div className="min-h-screen bg-[#FBF4EE] font-[satoshi]">
       <CheckoutHeader />
 
-      <div className="checkout-layout">
+      <div className="grid grid-cols-[1fr_420px] max-w-[1200px] mx-auto min-h-[calc(100vh-105px)] max-[900px]:grid-cols-1">
         {/* Left Column — Forms */}
         <motion.div
-          className="checkout-left"
+          className="py-10 px-12 max-[900px]:py-7 max-[900px]:px-5 max-sm:py-5 max-sm:px-4 border-r border-[rgba(196,127,110,0.1)] max-[900px]:border-r-0 max-[900px]:border-b max-[900px]:border-b-[rgba(196,127,110,0.1)]"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
@@ -153,22 +113,18 @@ export default function CheckoutPage() {
           <ExpressCheckout />
           <ContactSection form={form} onChange={handleChange} errors={errors} />
           <DeliverySection form={form} onChange={handleChange} errors={errors} />
-          <ShippingMethod
-            addressFilled={addressFilled}
-            selected={shippingMethod}
-            onSelect={setShippingMethod}
-          />
+          <ShippingMethod addressFilled={addressFilled} selected={shippingMethod} onSelect={setShippingMethod} />
           <PaymentSection form={form} onChange={handleChange} errors={errors} />
 
           <motion.button
-            className="pay-now-btn"
+            className="flex items-center justify-center w-full py-4 px-8 border-none rounded-full bg-gradient-to-br from-[#E8A98F] to-[#C8654E] text-[#FCEDDE] font-[satoshi-bold] text-base tracking-[0.06em] uppercase cursor-pointer mt-6 relative overflow-hidden transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] shadow-[0_4px_20px_rgba(200,101,78,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(200,101,78,0.45)] active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed disabled:translate-y-0 disabled:shadow-none btn-sheen"
             onClick={handleSubmit}
             disabled={submitting}
             whileHover={!submitting ? { scale: 1.02 } : {}}
             whileTap={!submitting ? { scale: 0.98 } : {}}
           >
             {submitting ? (
-              <span className="checkout-spinner" />
+              <span className="w-5 h-5 border-2 border-[rgba(252,237,222,0.4)] border-t-[#FCEDDE] rounded-full animate-spin" />
             ) : (
               'Pay now'
             )}
@@ -177,24 +133,21 @@ export default function CheckoutPage() {
 
         {/* Right Column — Order Summary */}
         <motion.div
-          className="checkout-right"
+          className="py-10 px-9 max-[900px]:py-7 max-[900px]:px-5 max-sm:py-5 max-sm:px-4 bg-[#F6E9DF] relative"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <OrderSummary
-            shippingCost={shippingCost}
-            onApplyDiscount={setDiscountAmount}
-          />
+          <OrderSummary shippingCost={shippingCost} onApplyDiscount={setDiscountAmount} />
         </motion.div>
       </div>
 
-      <div className="checkout-footer">
-        <a href="#">Refund policy</a>
-        <a href="#">Shipping</a>
-        <a href="#">Privacy policy</a>
-        <a href="#">Terms of service</a>
-        <a href="#">Cancellations</a>
+      <div className="py-6 px-12 max-sm:py-5 max-sm:px-4 flex justify-center gap-6 flex-wrap">
+        <a href="#" className="font-[satoshi] text-[0.78rem] text-[#C47F6E] underline underline-offset-[3px] transition-colors duration-250 hover:text-[#C8654E]">Refund policy</a>
+        <a href="#" className="font-[satoshi] text-[0.78rem] text-[#C47F6E] underline underline-offset-[3px] transition-colors duration-250 hover:text-[#C8654E]">Shipping</a>
+        <a href="#" className="font-[satoshi] text-[0.78rem] text-[#C47F6E] underline underline-offset-[3px] transition-colors duration-250 hover:text-[#C8654E]">Privacy policy</a>
+        <a href="#" className="font-[satoshi] text-[0.78rem] text-[#C47F6E] underline underline-offset-[3px] transition-colors duration-250 hover:text-[#C8654E]">Terms of service</a>
+        <a href="#" className="font-[satoshi] text-[0.78rem] text-[#C47F6E] underline underline-offset-[3px] transition-colors duration-250 hover:text-[#C8654E]">Cancellations</a>
       </div>
     </div>
   );

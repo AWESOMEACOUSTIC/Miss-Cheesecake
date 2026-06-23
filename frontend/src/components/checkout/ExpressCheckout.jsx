@@ -4,23 +4,13 @@ import { motion } from 'motion/react';
 export default function ExpressCheckout() {
   return (
     <div>
-      <p
-        style={{
-          fontFamily: 'satoshi, sans-serif',
-          fontSize: '0.82rem',
-          color: '#C47F6E',
-          textAlign: 'center',
-          marginBottom: 14,
-          textTransform: 'uppercase',
-          letterSpacing: '0.06em',
-        }}
-      >
+      <p className="font-[satoshi] text-[0.82rem] text-[#C47F6E] text-center mb-3.5 uppercase tracking-[0.06em]">
         Express checkout
       </p>
 
-      <div className="express-checkout-btns">
+      <div className="flex gap-3 mb-2 max-[900px]:flex-col">
         <motion.button
-          className="express-btn gpay"
+          className="flex-1 py-3.5 px-4 rounded-[14px] border-[1.5px] border-[rgba(0,0,0,0.12)] bg-white text-[#2D1810] font-[satoshi-bold] text-[0.9rem] cursor-pointer transition-all duration-300 flex items-center justify-center gap-2 tracking-[0.02em] hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] active:translate-y-0"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
@@ -31,7 +21,7 @@ export default function ExpressCheckout() {
         </motion.button>
 
         <motion.button
-          className="express-btn paypal"
+          className="flex-1 py-3.5 px-4 rounded-[14px] border-none bg-[#FFC439] text-[#003087] font-[satoshi-bold] text-[0.9rem] cursor-pointer transition-all duration-300 flex items-center justify-center gap-2 tracking-[0.02em] hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] active:translate-y-0"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
@@ -42,7 +32,7 @@ export default function ExpressCheckout() {
         </motion.button>
 
         <motion.button
-          className="express-btn applepay"
+          className="flex-1 py-3.5 px-4 rounded-[14px] border-none bg-black text-white font-[satoshi-bold] text-[0.9rem] cursor-pointer transition-all duration-300 flex items-center justify-center gap-2 tracking-[0.02em] hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] active:translate-y-0"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
@@ -53,7 +43,7 @@ export default function ExpressCheckout() {
         </motion.button>
       </div>
 
-      <div className="checkout-divider">OR</div>
+      <div className="flex items-center gap-4 my-7 text-[#C47F6E] text-[0.82rem] uppercase tracking-[0.08em] divider-lines">OR</div>
     </div>
   );
 }

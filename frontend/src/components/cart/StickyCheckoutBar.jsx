@@ -11,23 +11,20 @@ export default function StickyCheckoutBar() {
   const handleCheckout = async () => {
     if (itemCount === 0) return;
     setLoading(true);
-
-    // Simulate a brief loading state
     await new Promise((r) => setTimeout(r, 600));
-
     setLoading(false);
     closeCart();
     navigate('/checkout');
   };
 
   return (
-    <div className="sticky-checkout">
-      <div className="checkout-subtotal-row">
-        <span className="checkout-subtotal-label">Subtotal</span>
+    <div className="sticky bottom-0 bg-[#FBF4EE] px-7 pt-5 pb-7 border-t border-[rgba(196,127,110,0.15)] z-10 max-md:px-5 max-md:pt-4 max-md:pb-6">
+      <div className="flex justify-between items-center mb-1.5">
+        <span className="font-[satoshi-bold] text-base text-[#2D1810]">Subtotal</span>
         <AnimatePresence mode="wait">
           <motion.span
             key={subtotal}
-            className="checkout-subtotal-value"
+            className="font-[satoshi-bold] text-[1.1rem] text-[#2D1810]"
             initial={{ y: 8, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -8, opacity: 0 }}
@@ -38,17 +35,17 @@ export default function StickyCheckoutBar() {
         </AnimatePresence>
       </div>
 
-      <p className="checkout-note">Shipping &amp; taxes calculated at checkout</p>
+      <p className="font-[satoshi] text-[0.78rem] text-[#C47F6E] text-right mb-4">Shipping &amp; taxes calculated at checkout</p>
 
       <motion.button
-        className="checkout-btn"
+        className="flex items-center justify-center gap-2 w-full py-4 px-8 border-none rounded-full bg-gradient-to-br from-[#E8A98F] to-[#C8654E] text-[#FCEDDE] font-[satoshi-bold] text-base tracking-[0.06em] uppercase cursor-pointer relative overflow-hidden transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] shadow-[0_4px_20px_rgba(200,101,78,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(200,101,78,0.45)] active:translate-y-0 active:shadow-[0_2px_12px_rgba(200,101,78,0.3)] disabled:opacity-50 disabled:cursor-not-allowed disabled:translate-y-0 disabled:shadow-none btn-sheen"
         onClick={handleCheckout}
         disabled={itemCount === 0 || loading}
         whileHover={itemCount > 0 && !loading ? { scale: 1.02 } : {}}
         whileTap={itemCount > 0 && !loading ? { scale: 0.98 } : {}}
       >
         {loading ? (
-          <span className="checkout-spinner" />
+          <span className="w-5 h-5 border-2 border-[rgba(252,237,222,0.4)] border-t-[#FCEDDE] rounded-full animate-spin" />
         ) : (
           'Check Out'
         )}
