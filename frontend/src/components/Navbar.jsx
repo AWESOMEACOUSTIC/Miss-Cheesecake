@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingBag } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-// import { useCart } from '../context/CartContext';
+import { useCart } from '../context/CartContext';
 
 const logo = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/misscheesecake_logo.avif";
 
@@ -14,7 +14,7 @@ const navItems = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  // const { openCart, itemCount } = useCart();
+  const { openCart, itemCount } = useCart();
 
   return (
     <nav className="flex md:w-[40%] md:h-[75px] items-center justify-between bg-[#FCEDDE] rounded-full px-4 py-2 lg:px-6 lg:py-0 border-2 border-[#FDFDFD] relative">

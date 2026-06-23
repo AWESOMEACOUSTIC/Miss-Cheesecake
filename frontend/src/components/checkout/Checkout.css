@@ -1,0 +1,777 @@
+/* ──────────────────────────────────────────────
+   Checkout Page — Miss Cheesecake
+   ────────────────────────────────────────────── */
+
+/* ── Layout ── */
+.checkout-page {
+  min-height: 100vh;
+  background: #FBF4EE;
+  font-family: 'satoshi', sans-serif;
+}
+
+.checkout-brand-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 32px;
+  position: relative;
+  border-bottom: 1px solid rgba(196, 127, 110, 0.12);
+}
+
+.checkout-brand-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+
+.checkout-brand-name {
+  margin-left: 12px;
+  font-family: 'emiken', sans-serif;
+  font-size: 1.4rem;
+  color: #FF6B6B;
+}
+
+.checkout-cart-link {
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #C47F6E;
+  transition: color 0.3s;
+}
+
+.checkout-cart-link:hover {
+  color: #C8654E;
+}
+
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 105px);
+}
+
+.checkout-left {
+  padding: 40px 48px;
+  border-right: 1px solid rgba(196, 127, 110, 0.1);
+}
+
+.checkout-right {
+  padding: 40px 36px;
+  background: #F6E9DF;
+  position: relative;
+}
+
+.checkout-right-sticky {
+  position: sticky;
+  top: 24px;
+}
+
+/* ── Section Titles ── */
+.checkout-section {
+  margin-bottom: 36px;
+}
+
+.checkout-section-title {
+  font-family: 'satoshi-bold', sans-serif;
+  font-size: 1.15rem;
+  color: #2D1810;
+  margin: 0 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkout-section-link {
+  font-family: 'satoshi', sans-serif;
+  font-size: 0.85rem;
+  color: #C8654E;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.checkout-section-link:hover {
+  color: #B0745A;
+}
+
+/* ── Floating Input ── */
+.floating-input-group {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.floating-input {
+  width: 100%;
+  padding: 18px 16px 8px;
+  border: 1.5px solid rgba(196, 127, 110, 0.25);
+  border-radius: 14px;
+  background: #FFFFFF;
+  font-family: 'satoshi', sans-serif;
+  font-size: 0.95rem;
+  color: #2D1810;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.floating-input:focus {
+  border-color: #C8654E;
+  box-shadow: 0 0 0 3px rgba(200, 101, 78, 0.1);
+}
+
+.floating-input.has-error {
+  border-color: #E74C3C;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.floating-input.is-valid {
+  border-color: #4CAF50;
+}
+
+.floating-label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'satoshi', sans-serif;
+  font-size: 0.95rem;
+  color: #C47F6E;
+  pointer-events: none;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  background: transparent;
+}
+
+.floating-input:focus ~ .floating-label,
+.floating-input:not(:placeholder-shown) ~ .floating-label {
+  top: 10px;
+  transform: translateY(0);
+  font-size: 0.72rem;
+  color: #C8654E;
+}
+
+.floating-error {
+  font-family: 'satoshi', sans-serif;
+  font-size: 0.76rem;
+  color: #E74C3C;
+  margin-top: 4px;
+  padding-left: 4px;
+}
+
+/* ── Input Grids ── */
+.input-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.input-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+/* ── Select ── */
+.floating-select {
+  width: 100%;
+  padding: 18px 16px 8px;
+  border: 1.5px solid rgba(196, 127, 110, 0.25);
+  border-radius: 14px;
+  background: #FFFFFF;
+  font-family: 'satoshi', sans-serif;
+  font-size: 0.95rem;
+  color: #2D1810;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.floating-select:focus {
+  border-color: #C8654E;
+  box-shadow: 0 0 0 3px rgba(200, 101, 78, 0.1);
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: '';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #C47F6E;
+  pointer-events: none;
+}
+
+/* ── Checkbox ── */
+.checkout-checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.checkout-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 1.5px solid #C47F6E;
+  accent-color: #C8654E;
+  cursor: pointer;
+}
+
+.checkout-checkbox-label {
+  font-family: 'satoshi', sans-serif;
+  font-size: 0.88rem;
+  color: #5A3A2E;
+  user-select: none;
+}
+
+/* ── Divider ── */
+.checkout-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 28px 0;
+  color: #C47F6E;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.checkout-divider::before,
+.checkout-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(196, 127, 110, 0.25);
+}
+
+/* ── Express Checkout Buttons ── */
+.express-checkout-btns {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.express-btn {
+  flex: 1;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: none;
+  font-family: 'satoshi-bold', sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  letter-spacing: 0.02em;
+}
+
+.express-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.express-btn:active {
+  transform: translateY(0);
+}
+
+.express-btn.gpay {
+  background: #FFFFFF;
+  color: #2D1810;
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+}
+
+.express-btn.paypal {
+  background: #FFC439;
+  color: #003087;
+}
+
+.express-btn.applepay {
+  background: #000000;
+  color: #FFFFFF;
+}
+
+/* ── Shipping Method ── */
+.shipping-placeholder {
+  padding: 20px;
+  background: #FDF7F2;
+  border: 1.5px dashed rgba(196, 127, 110, 0.25);
+  border-radius: 14px;
+  text-align: center;
+  color: #C47F6E;
+  font-size: 0.88rem;
+}
+
+.shipping-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border: 1.5px solid rgba(196, 127, 110, 0.2);
+  border-radius: 14px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #FFFFFF;
+}
+
+.shipping-option:hover {
+  border-color: #C8654E;
+  box-shadow: 0 2px 12px rgba(200, 101, 78, 0.08);
+}
+
+.shipping-option.selected {
+  border-color: #C8654E;
+  background: #FDF7F2;
+}
+
+.shipping-option-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.shipping-radio {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #C47F6E;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.shipping-radio.active::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #C8654E;
+}
+
+.shipping-option-name {
+  font-family: 'satoshi', sans-serif;
+  font-size: 0.9rem;
+  color: #2D1810;
+}
+
+.shipping-option-time {
+  font-size: 0.78rem;
+  color: #C47F6E;
+}
+
+.shipping-option-price {
+  font-family: 'satoshi-bold', sans-serif;
+  font-size: 0.95rem;
+  color: #2D1810;
+}
+
+/* ── Payment Section ── */
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.payment-method-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border: 1.5px solid rgba(196, 127, 110, 0.2);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #FFFFFF;
+}
+
+.payment-method-option:hover {
+  border-color: #C8654E;
+}
+
+.payment-method-option.selected {
+  border-color: #C8654E;
+  background: #FDF7F2;
+}
+
+.payment-method-name {
+  flex: 1;
+  font-family: 'satoshi', sans-serif;
+  font-size: 0.9rem;
+  color: #2D1810;
+}
+
+.payment-card-icons {
+  display: flex;
+  gap: 6px;
+}
+
+.payment-card-icon {
+  width: 36px;
+  height: 24px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #FFF;
+}
+
+.card-form-container {
+  padding: 20px;
+  margin-top: -1px;
+  border: 1.5px solid rgba(196, 127, 110, 0.2);
+  border-top: none;
+  border-radius: 0 0 14px 14px;
+  background: #FFFFFF;
+}
+
+.payment-note {
+  font-size: 0.78rem;
+  color: #C47F6E;
+  margin-bottom: 16px;
+}
+
+/* ── Order Summary ── */
+.order-summary-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.order-summary-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.order-summary-thumb {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.order-summary-thumb img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #FDF2EA;
+  padding: 6px;
+}
+
+.order-summary-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #C8654E;
+  color: #FFF;
+  font-size: 0.68rem;
+  font-family: 'satoshi-bold', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-summary-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.order-summary-item-title {
+  font-family: 'satoshi', sans-serif;
+  font-size: 0.88rem;
+  color: #2D1810;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.order-summary-item-variant {
+  font-size: 0.78rem;
+  color: #C47F6E;
+}
+
+.order-summary-item-price {
+  font-family: 'satoshi-bold', sans-serif;
+  font-size: 0.9rem;
+  color: #2D1810;
+  flex-shrink: 0;
+}
+
+/* ── Discount Code ── */
+.discount-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.discount-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1.5px solid rgba(196, 127, 110, 0.25);
+  border-radius: 12px;
+  background: #FFFFFF;
+  font-family: 'satoshi', sans-serif;
+  font-size: 0.88rem;
+  color: #2D1810;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.discount-input:focus {
+  border-color: #C8654E;
+}
+
+.discount-apply-btn {
+  padding: 12px 24px;
+  border: 1.5px solid #C8654E;
+  border-radius: 12px;
+  background: transparent;
+  color: #C8654E;
+  font-family: 'satoshi-bold', sans-serif;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.discount-apply-btn:hover {
+  background: #C8654E;
+  color: #FCEDDE;
+}
+
+/* ── Price Breakdown ── */
+.price-breakdown {
+  border-top: 1px solid rgba(196, 127, 110, 0.15);
+  padding-top: 20px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #5A3A2E;
+}
+
+.price-row.total {
+  font-family: 'satoshi-bold', sans-serif;
+  font-size: 1.1rem;
+  color: #2D1810;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(196, 127, 110, 0.15);
+}
+
+.price-row .currency-label {
+  font-size: 0.72rem;
+  color: #C47F6E;
+  margin-right: 4px;
+  text-decoration: line-through;
+  text-decoration-color: transparent;
+}
+
+.price-row .info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid #C47F6E;
+  font-size: 0.6rem;
+  color: #C47F6E;
+  margin-left: 4px;
+  cursor: help;
+}
+
+/* ── Pay Now Button ── */
+.pay-now-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #E8A98F 0%, #C8654E 100%);
+  color: #FCEDDE;
+  font-family: 'satoshi-bold', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 4px 20px rgba(200, 101, 78, 0.3);
+}
+
+.pay-now-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(200, 101, 78, 0.45);
+}
+
+.pay-now-btn:active {
+  transform: translateY(0);
+}
+
+.pay-now-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.pay-now-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.7s ease;
+}
+
+.pay-now-btn:hover::before {
+  transform: translateX(100%);
+}
+
+/* ── Order Success ── */
+.order-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.success-checkmark {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #E8A98F, #C8654E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: #FFF;
+}
+
+.order-success h2 {
+  font-family: 'emiken', sans-serif;
+  font-size: 2rem;
+  color: #FF6B6B;
+  margin: 0 0 12px;
+}
+
+.order-success p {
+  font-family: 'satoshi', sans-serif;
+  color: #5A3A2E;
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+}
+
+.order-success .order-number {
+  font-family: 'satoshi-bold', sans-serif;
+  color: #C8654E;
+  font-size: 1.1rem;
+}
+
+/* ── Footer Links ── */
+.checkout-footer {
+  padding: 24px 48px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.checkout-footer a {
+  font-family: 'satoshi', sans-serif;
+  font-size: 0.78rem;
+  color: #C47F6E;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.25s;
+}
+
+.checkout-footer a:hover {
+  color: #C8654E;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .checkout-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-left {
+    padding: 28px 20px;
+    border-right: none;
+    border-bottom: 1px solid rgba(196, 127, 110, 0.1);
+  }
+
+  .checkout-right {
+    padding: 28px 20px;
+  }
+
+  .express-checkout-btns {
+    flex-direction: column;
+  }
+
+  .input-row-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .checkout-brand-header {
+    padding: 16px 20px;
+  }
+
+  .checkout-left {
+    padding: 20px 16px;
+  }
+
+  .checkout-right {
+    padding: 20px 16px;
+  }
+
+  .input-row-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-footer {
+    padding: 20px 16px;
+  }
+}
