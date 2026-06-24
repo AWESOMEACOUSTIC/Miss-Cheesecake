@@ -11,6 +11,17 @@ export default function HorizontalScroll({ cards }) {
       requestAnimationFrame(raf)
     }
     requestAnimationFrame(raf)
+
+    const handleStop = () => lenis.stop()
+    const handleStart = () => lenis.start()
+    window.addEventListener('lenis-stop', handleStop)
+    window.addEventListener('lenis-start', handleStart)
+
+    return () => {
+      window.removeEventListener('lenis-stop', handleStop)
+      window.removeEventListener('lenis-start', handleStart)
+      lenis.destroy()
+    }
   }, [])
 
   const { scrollYProgress } = useScroll({

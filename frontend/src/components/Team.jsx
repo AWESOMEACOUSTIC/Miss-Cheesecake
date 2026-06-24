@@ -16,6 +16,11 @@ export default function Team({ members = [], defaultName = '' }) {
     }
     requestAnimationFrame(raf);
 
+    const handleStop = () => lenis.stop();
+    const handleStart = () => lenis.start();
+    window.addEventListener('lenis-stop', handleStop);
+    window.addEventListener('lenis-start', handleStart);
+
     const el = containerRef.current;
     if (!el) return;
     const profileImagesContainer = el.querySelector('.profile-images');
@@ -66,6 +71,12 @@ export default function Team({ members = [], defaultName = '' }) {
         });
       });
     }
+
+    return () => {
+      window.removeEventListener('lenis-stop', handleStop);
+      window.removeEventListener('lenis-start', handleStart);
+      lenis.destroy();
+    };
   }, []);
 
   return (
