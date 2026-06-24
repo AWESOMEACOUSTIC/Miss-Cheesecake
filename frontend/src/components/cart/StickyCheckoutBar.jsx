@@ -18,7 +18,10 @@ export default function StickyCheckoutBar() {
   };
 
   return (
-    <div className="sticky bottom-0 bg-[#FBF4EE] px-7 pt-5 pb-7 border-t border-[rgba(196,127,110,0.15)] z-10 max-md:px-5 max-md:pt-4 max-md:pb-6">
+    <div
+      className="sticky bottom-0 bg-[#FBF4EE] px-7 pt-5 border-t border-[rgba(196,127,110,0.15)] z-10 max-md:px-5 max-md:pt-4"
+      style={{ paddingBottom: 'max(1.75rem, env(safe-area-inset-bottom, 1.75rem))' }}
+    >
       <div className="flex justify-between items-center mb-1.5">
         <span className="font-[satoshi-bold] text-base text-[#2D1810]">Subtotal</span>
         <AnimatePresence mode="wait">
