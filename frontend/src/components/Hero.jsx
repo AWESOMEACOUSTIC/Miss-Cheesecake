@@ -1,4 +1,4 @@
-const heroImage = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/hero_image.avif"; 
+const heroImage = "https://ik.imagekit.io/kgka7sx7o/Miss%20Cheesecake/hero_image.avif";
 import Button from './Button'
 
 export default function Hero() {
@@ -9,7 +9,7 @@ export default function Hero() {
 
   return (
     <section className="w-full h-40 md:h-auto flex overflow-hidden">
-      <div className="flex flex-col justify-center items-start w-[20vw] md:w-1/2 px-4 md:px-16">
+      <div className="flex flex-col justify-center items-start w-1/2 md:w-1/2 px-4 md:px-16">
         {headings.map((h, idx) => (
           <h1
             key={idx}
@@ -24,10 +24,10 @@ export default function Hero() {
           </h1>
         ))}
 
-        <Button btn="Explore Menu"/>
+        <Button btn="Explore Menu" />
       </div>
 
-      <div className="flex-1 ml-30 flex justify-center items-center">
+      <div className="flex-1 ml-4 md:ml-30 flex justify-center items-center">
         <img
           src={heroImage}
           alt="hero image"
