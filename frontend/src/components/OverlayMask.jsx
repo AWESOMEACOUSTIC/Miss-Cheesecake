@@ -57,7 +57,7 @@ export default function OverlayMask() {
           style={{ clipPath }}
         >
           <motion.h1
-            className="text-[12vw] md:text-[7vw] text-[#FF6E6E] font-[emiken] uppercase tracking-tighter text-center"
+            className="text-[12vw] md:text-[7vw] text-[#FF6E6E] font-[emiken] uppercase tracking-[0.001em] text-center"
             style={{ y: slideUp }}
           >
             MISS CHEESECAKE

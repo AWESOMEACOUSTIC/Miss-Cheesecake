@@ -84,10 +84,10 @@ function MemoryWall() {
 
       {/* Header */}
       <div className="flex flex-col items-center justify-center mb-10 md:mb-16">
-        <h1 className="text-[#FF6E6E] font-[emiken] text-5xl md:text-7xl uppercase tracking-tighter">
+        <h1 className="text-[#FF6E6E] text-center font-[emiken] text-5xl md:text-7xl uppercase">
           Memory Wall
         </h1>
-        <p className="text-[#F5B426] font-[samarkan] text-3xl md:text-5xl mt-[10px] md:mt-[8px]">
+        <p className="text-lg text-center md:text-[1.43em] text-[#E68400] font-[samarkan]">
           yaadein
         </p>
       </div>
