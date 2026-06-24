@@ -19,53 +19,70 @@ export default function App() {
   const location = useLocation();
 
   useEffect(() => {
-    if (loading) {
-      const timer = setTimeout(() => {
+    if (!loading) return;
+
+    // The Loader's GSAP animation takes exactly 4.2s to complete
+    const minTimePromise = new Promise(resolve => setTimeout(resolve, 4200));
+
+    // Wait for all custom fonts to be fully loaded
+    const fontsReadyPromise = document.fonts ? document.fonts.ready : Promise.resolve();
+
+    // Wait for the window load event (ensures images like the hero image are downloaded)
+    const windowLoadPromise = new Promise((resolve) => {
+      if (document.readyState === 'complete') {
+        resolve();
+      } else {
+        window.addEventListener('load', resolve, { once: true });
+      }
+    });
+
+    // Wait for all conditions to be met before removing the loader
+    Promise.all([minTimePromise, fontsReadyPromise, windowLoadPromise])
+      .then(() => {
         setLoading(false);
         sessionStorage.setItem('visited', 'true');
-      }, 3000);
-      return () => clearTimeout(timer);
-    }
-
+      })
+      .catch(() => {
+        setLoading(false);
+        sessionStorage.setItem('visited', 'true');
+      });
   }, [loading]);
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
-      {loading ? (
-        <motion.div
-          key="loader"
-          initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.7 }}
-          className="fixed inset-0 z-50"
-        >
-          <Loader />
-        </motion.div>
-      ) : (
-        <motion.div
-          key="app"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7 }}
-          className="relative"
-        >
-          <Routes location={location} key={location.pathname}>
-            <Route path="/login" element={<AuthPage mode="login" />} />
-            <Route path="/signup" element={<AuthPage mode="signup" />} />
-            <Route path="/checkout" element={<CheckoutPage />} />
-            <Route path="/" element={<Layout />}
-            >
-              <Route index element={<Home />} />
-              <Route path="cheesecakes" element={<Cheesecakes />} />
-              <Route path="about" element={<About />} />
-              <Route path="*" element={<NotFound />} />
-            </Route>
-          </Routes>
+    <>
+      <motion.div
+        key="app"
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 1 }}
+        className="relative"
+      >
+        <Routes location={location} key={location.pathname}>
+          <Route path="/login" element={<AuthPage mode="login" />} />
+          <Route path="/signup" element={<AuthPage mode="signup" />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="cheesecakes" element={<Cheesecakes />} />
+            <Route path="about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+        <CartDrawer />
+      </motion.div>
 
-          {/* Cart Drawer — renders globally */}
-          <CartDrawer />
-        </motion.div>
-      )}
-    </AnimatePresence>
+      <AnimatePresence>
+        {loading && (
+          <motion.div
+            key="loader"
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+            className="fixed inset-0 z-[100]"
+          >
+            <Loader />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
